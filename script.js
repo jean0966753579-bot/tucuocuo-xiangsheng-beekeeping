@@ -404,6 +404,96 @@ const musicTracks = [
 
 那些說過的話
 都還在土地裡發芽`
+  },
+  {
+    title: "醉蜂鬧山頭",
+    artist: "翔勝養蜂",
+    src: "assets/music/醉蜂鬧山頭.mp3",
+    cover: "",
+    story: "把蜂群、山頭與熱鬧花期寫成有畫面的歌曲。",
+    lyrics: `醉蜂鬧山頭
+花開的時候
+整座山都醒來`
+  },
+  {
+    title: "心才有地方曬太陽",
+    artist: "生命故事歌曲",
+    src: "assets/music/心才有地方曬太陽.mp3",
+    cover: "",
+    story: "一首溫暖的歌，適合放在生命誌與家族故事裡。",
+    lyrics: `心才有地方曬太陽
+人就有力氣
+慢慢走向明天`
+  },
+  {
+    title: "美人山下的風",
+    artist: "生命故事歌曲",
+    src: "assets/music/美人山下的風.mp3",
+    cover: "",
+    story: "寫美人山、老家與風裡帶回來的記憶。",
+    lyrics: `美人山下的風
+吹過老屋
+也吹回心裡的路`
+  },
+  {
+    title: "願意拍手的人",
+    artist: "生命故事歌曲",
+    src: "assets/music/願意拍手的人.mp3",
+    cover: "",
+    story: "獻給一路支持、願意給掌聲的人。",
+    lyrics: `願意拍手的人
+把鼓勵留在路旁
+陪人繼續往前行`
+  },
+  {
+    title: "袂遮去我的天",
+    artist: "生命故事歌曲",
+    src: "assets/music/袂遮去我的天.mp3",
+    cover: "",
+    story: "帶有台語語感的生命歌，寫不被遮住的天空。",
+    lyrics: `袂遮去我的天
+風雨過了
+光還是會照進來`
+  },
+  {
+    title: "守望蜂鄉",
+    artist: "翔勝養蜂",
+    src: "assets/music/守望蜂鄉.mp3",
+    cover: "",
+    story: "寫蜂鄉、守候與一年一年累積的甜。",
+    lyrics: `守望蜂鄉
+守一季花開
+也守一家人的希望`
+  },
+  {
+    title: "金山土埆厝",
+    artist: "生命故事歌曲",
+    src: "assets/music/金山土埆厝.mp3",
+    cover: "",
+    story: "寫金山、美人山下與百年土埆厝的歌。",
+    lyrics: `金山土埆厝
+站在山海之間
+把家的故事留下來`
+  },
+  {
+    title: "美人山腳下的炊煙",
+    artist: "生命故事歌曲",
+    src: "assets/music/美人山腳下的炊煙.mp3",
+    cover: "",
+    story: "把炊煙、老屋與童年飯香寫進旋律裡。",
+    lyrics: `美人山腳下的炊煙
+慢慢升起
+像有人叫阮回家`
+  },
+  {
+    title: "慢慢走，花會開",
+    artist: "生命故事歌曲",
+    src: "assets/music/慢慢走，花會開.mp3",
+    cover: "",
+    story: "一首給自己也給家人的溫柔提醒。",
+    lyrics: `慢慢走，花會開
+不用急
+日子會帶咱到該去的所在`
   }
 ];
 
