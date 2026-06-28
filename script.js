@@ -357,47 +357,53 @@ const reflectionItems = [
 
 const musicTracks = [
   {
-    title: "山海之間",
-    artist: "示範曲目",
-    src: "",
+    title: "山腳下的蜜香",
+    artist: "翔勝養蜂",
+    src: "assets/music/山腳下的蜜香.mp3",
     cover: "",
-    story: "這首歌可以作為網站主題曲，寫金山老屋與苗栗蜂場最後交會成一個家庭。",
-    lyrics: `每一個人
-都有一個出生的地方
+    story: "以山腳、蜂箱與蜜香作為主題，適合放在翔勝養蜂故事旁邊播放。",
+    lyrics: `山腳下的蜜香
+從花開的地方慢慢回來
 
-每一段人生
-都有一條回家的路
-
-山風穿過土牆邊
-海光落在舊屋簷
-一口蜂蜜的甜
-像家人沒說出口的惦念`
+按下左側歌曲按鈕
+就能開始播放這首 MP3`
   },
   {
-    title: "美人山下",
-    artist: "示範曲目",
-    src: "",
+    title: "美人山下的月桃花",
+    artist: "生命故事歌曲",
+    src: "assets/music/美人山下的月桃花.mp3",
     cover: "",
-    story: "適合寫童年的一天：凌晨四點、巡田、灶腳、田埂、水圳與老屋。",
-    lyrics: `請把 MP3 放進 assets/music
-再到 script.js 的 musicTracks 填入檔名
+    story: "寫美人山下的記憶、老屋與月桃花香。",
+    lyrics: `美人山下的月桃花
+把舊時光輕輕牽回來
 
-例如：
-src: "assets/music/meiren-mountain.mp3"`
+風從山邊走過
+也把家的聲音帶來`
   },
   {
-    title: "蜂蜜金色的午後",
-    artist: "示範曲目",
-    src: "",
+    title: "人生親像蜜香紅茶",
+    artist: "生命故事歌曲",
+    src: "assets/music/人生親像蜜香紅茶.mp3",
     cover: "",
-    story: "適合寫翔勝養蜂、花期、蜂箱與一整年的等待。",
-    lyrics: `一瓶蜂蜜
-並不是糖
+    story: "把人生滋味寫成蜜香紅茶，甘甜也帶著回韻。",
+    lyrics: `人生親像蜜香紅茶
+入口有甜 也有慢慢回來的香
 
-它是花開的消息
-是山路上的等待
-也是蜂農一年一年
-守出來的光`
+一杯茶
+一段路
+一個人慢慢走出的故事`
+  },
+  {
+    title: "玉米田的約定",
+    artist: "生命故事歌曲",
+    src: "assets/music/玉米田的約定.mp3",
+    cover: "",
+    story: "留給田野、童年與家族記憶的一首歌。",
+    lyrics: `玉米田的約定
+在風裡站成一排
+
+那些說過的話
+都還在土地裡發芽`
   }
 ];
 
@@ -653,7 +659,7 @@ function setupMusic() {
 
   if (!playlist || !audio || !trackTitle || !trackMeta || !lyricsTitle || !lyricsText) return;
 
-  function selectTrack(track, button) {
+  function selectTrack(track, button, shouldPlay = false) {
     document.querySelectorAll(".track-button").forEach((node) => node.classList.remove("active"));
     button.classList.add("active");
     trackTitle.textContent = track.title;
@@ -670,6 +676,12 @@ function setupMusic() {
     }
 
     audio.load();
+
+    if (shouldPlay && track.src) {
+      audio.play().catch(() => {
+        trackMeta.textContent = `${track.artist}｜${track.story}｜若瀏覽器阻擋自動播放，請再按播放器的播放鍵。`;
+      });
+    }
   }
 
   playlist.innerHTML = "";
@@ -679,7 +691,7 @@ function setupMusic() {
     button.type = "button";
     button.className = "track-button";
     button.innerHTML = `<strong>${track.title}</strong><span>${track.artist}</span>`;
-    button.addEventListener("click", () => selectTrack(track, button));
+    button.addEventListener("click", () => selectTrack(track, button, true));
     playlist.appendChild(button);
 
     if (index === 0) selectTrack(track, button);
