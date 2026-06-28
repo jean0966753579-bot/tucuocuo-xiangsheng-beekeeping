@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生命誌｜山海之間</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="stories">
+  <header class="site-header">
+    <a class="brand" href="index.html">山海之間</a>
+    <button class="nav-toggle" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="主要導覽">
+      <a href="index.html">首頁</a>
+      <a href="childhood.html">故鄉與土埆厝</a>
+      <a href="beekeeping.html">翔勝養蜂</a>
+      <a href="music.html">歌曲</a>
+      <a href="stories.html" aria-current="page">生命誌</a>
+      <a href="about.html">資料準備</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero compact">
+      <p class="eyebrow">第六、七、十、十一、十二章</p>
+      <h1>深度分享、工程人生、生命地圖、AI 知識庫與收藏館</h1>
+      <p>這一頁是網站未來長大的核心。所有文章、短文、工程人生、自然知識與收藏，都會在這裡形成可搜尋、可串連的生命資料庫。</p>
+    </section>
+
+    <section class="section" id="engineeringLife">
+      <div class="section-heading">
+        <p class="eyebrow">第三章｜我的工程人生</p>
+        <h2>不要寫履歷，要寫每一站的故事</h2>
+      </div>
+      <div class="life-timeline" id="engineeringTimeline"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">工程與茶行相簿</p>
+        <h2>從工地、茶席到捷運隧道，每一站都有照片作證</h2>
+      </div>
+      <div class="gallery-grid" id="engineeringGallery"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">第六章｜深度分享</p>
+        <h2>長文章會讓人生有厚度</h2>
+      </div>
+      <div class="article-list expanded" id="allArticles"></div>
+    </section>
+
+    <section class="section" id="reflections">
+      <div class="section-heading">
+        <p class="eyebrow">第七章｜感觸時刻</p>
+        <h2>每日一句，或一篇 300 字短文</h2>
+      </div>
+      <div class="reflection-list light" id="allReflections"></div>
+    </section>
+
+    <section class="section map-preview" id="lifeMap">
+      <div>
+        <p class="eyebrow">第十章｜生命地圖</p>
+        <h2>一張台灣，標出人生走過的地方</h2>
+        <p>金山、深坑、石碇、苗栗、台南、茶園、蜂場，未來可做成可點擊地圖。點一下地點，就跳出照片、文章、歌曲與回憶。</p>
+      </div>
+      <div class="map-placeholder taiwan-map">
+        <strong>生命地圖預留區</strong>
+        <span>金山｜深坑｜石碇｜苗栗｜台南｜茶園｜蜂場</span>
+      </div>
+    </section>
+
+    <section class="section" id="knowledgeBase">
+      <div class="section-heading">
+        <p class="eyebrow">第十一章｜AI 知識庫</p>
+        <h2>先做搜尋，未來再接 AI 對話</h2>
+      </div>
+      <div class="search-panel">
+        <label for="siteSearch">搜尋網站內容</label>
+        <input id="siteSearch" type="search" placeholder="輸入：土埆厝、蜂蜜、爸爸、工程、AI">
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </section>
+
+    <section class="section" id="collectionRoom">
+      <div class="section-heading">
+        <p class="eyebrow">第十二章｜收藏館</p>
+        <h2>把收藏也做成數位典藏</h2>
+      </div>
+      <div class="collection-grid">
+        <article><h3>新疆和闐玉</h3><p>未來可放玉件照片、尺寸、重量、來源與收藏故事。</p></article>
+        <article><h3>台灣茶</h3><p>記錄茶園、茶種、年份、風味與泡茶心得。</p></article>
+        <article><h3>紫砂壺</h3><p>整理壺型、泥料、作者、使用故事與照片。</p></article>
+        <article><h3>老照片與老農具</h3><p>讓家族記憶與農村器物有可查找的保存位置。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> 山海之間</p>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="返回頂端">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
