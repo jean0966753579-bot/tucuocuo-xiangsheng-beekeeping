@@ -598,6 +598,56 @@ const galleryItems = [
     gps: "待補",
     song: "一瓶蜂蜜",
     note: "近看蜂箱口聚集的蜜蜂，能清楚感受到蜂群活動與蜂場生命力。"
+  },
+  {
+    title: "城市裡的翔勝養蜂足跡",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-city-building.jpg",
+    date: "待補",
+    place: "翔勝養蜂相關地點",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "城市街景與建築外觀，補上翔勝養蜂故事中從蜂場延伸到生活場域的一角。"
+  },
+  {
+    title: "滿框蜂蜜與蜂箱",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-honey-frame-and-box.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "一瓶蜂蜜",
+    note: "蜂脾靠在蜂箱前，巢房裡可見深淺不同的蜜色，也能看見蜂群聚集在箱蓋與巢脾周圍。"
+  },
+  {
+    title: "打開蜂箱的野巢脾",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-open-box-wild-comb.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山城蜂路",
+    note: "蜂箱打開後可見自然垂掛的巢脾與密集蜂群，記錄蜂群在箱內築巢的真實狀態。"
+  },
+  {
+    title: "貨車載運翔勝蜂箱",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-truck-loaded-boxes.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山腳下的蜜香",
+    note: "貨車上整齊堆疊翔勝養蜂蜂箱，呈現蜂箱移動、轉場與蜂場調度的工作面。"
+  },
+  {
+    title: "夜間載運蜂箱",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-night-truck-boxes.jpg",
+    date: "待補",
+    place: "翔勝養蜂",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "夜間貨車上綁妥的蜂箱，補上養蜂工作中搬運、等待與轉場的另一種現場。"
   }
 ];
 
