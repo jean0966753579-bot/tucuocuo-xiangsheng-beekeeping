@@ -60,6 +60,12 @@ FILES = [
     "beekeeping-xiangsheng-smoker-and-frames.jpg",
     "beekeeping-xiangsheng-three-person-harvest.jpg",
     "beekeeping-xiangsheng-honeycomb-close-portrait.jpg",
+    "beekeeping-xiangsheng-woodland-apiary-wide.jpg",
+    "beekeeping-xiangsheng-carrying-covered-boxes.jpg",
+    "beekeeping-xiangsheng-team-frame-check.jpg",
+    "beekeeping-xiangsheng-team-harvest-line.jpg",
+    "beekeeping-xiangsheng-forest-apiary-overview.jpg",
+    "beekeeping-xiangsheng-bees-on-box-close.jpg",
     "nanxi-honey-harvest-2018.jpg",
 ]
 

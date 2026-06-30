@@ -538,6 +538,66 @@ const galleryItems = [
     gps: "待補",
     song: "一瓶蜂蜜",
     note: "近距離看見蜂脾上的蜂蜜與蜂群，也看見蜂農長年累積的熟練與穩定。"
+  },
+  {
+    title: "林蔭下的翔勝蜂箱",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-woodland-apiary-wide.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山城蜂路",
+    note: "蜂箱整齊分布在林蔭下，落葉、樹幹與白色蜂箱構成翔勝養蜂的典型蜂場環境。"
+  },
+  {
+    title: "林間搬運蜂箱",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-carrying-covered-boxes.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "蜂農戴著面網搬運覆布蜂箱，背景可見一整片蜂場與煙霧，記錄蜂場日常調度。"
+  },
+  {
+    title: "多人分工檢查蜂脾",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-team-frame-check.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山腳下的蜜香",
+    note: "蜂農們在多個蜂箱旁分工查看蜂脾，蜂群飛舞中呈現採蜜與檢查作業的密度。"
+  },
+  {
+    title: "蜂場採蜜作業線",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-team-harvest-line.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山城蜂路",
+    note: "多位蜂農在蜂箱間同步作業，有人抽框、有人處理蜂脾，保留採蜜現場的完整工作線。"
+  },
+  {
+    title: "林下蜂箱全景",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-forest-apiary-overview.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "從較遠視角看見蜂箱散布在樹林間，呈現蜂場規模與自然環境的關係。"
+  },
+  {
+    title: "蜂箱口聚集的蜜蜂",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-bees-on-box-close.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "一瓶蜂蜜",
+    note: "近看蜂箱口聚集的蜜蜂，能清楚感受到蜂群活動與蜂場生命力。"
   }
 ];
 
