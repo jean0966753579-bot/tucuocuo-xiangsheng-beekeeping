@@ -1,5 +1,85 @@
 const galleryItems = [
   {
+    title: "2004 年修復前的荒廢庭院",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-collapsed-courtyard.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "美人山下",
+    note: "修復前的庭院雜草與花草並生，倒塌木樑、竹竿與土角牆交錯，留下老屋荒廢時期的珍貴影像。"
+  },
+  {
+    title: "2004 年修復前的鐵窗與老牆",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-window-bars.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "修舊如舊",
+    note: "斑駁土牆、紅磚窗框、鏽蝕鐵窗與屋內堆放物，記錄修復前生活痕跡仍留在屋內的樣貌。"
+  },
+  {
+    title: "2004 年修復前的側牆與屋瓦",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-side-wall.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "北海鄉情",
+    note: "側面牆身可見大片剝落與土角磚外露，屋瓦高低不整，呈現老屋尚未整修前的原始狀態。"
+  },
+  {
+    title: "2004 年修復前的外牆與老窗",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-sepia-front-wall.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "美人山下的風",
+    note: "老窗上方的土角牆已局部崩落，屋瓦覆滿歲月痕跡，見證土角厝等待修復的時刻。"
+  },
+  {
+    title: "2004 年修復前的土角側牆",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-sepia-side-wall.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "修舊如舊",
+    note: "側牆表面龜裂斑駁，土角磚層次清楚可見，保留老屋最樸實的構造記憶。"
+  },
+  {
+    title: "2004 年修復前的屋頂與入口",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-sepia-roof-entry.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "老屋重生",
+    note: "屋頂瓦片已有破損與苔痕，門口木柱撐起入口，也看得見修復前仍保留的傳統屋身比例。"
+  },
+  {
+    title: "2004 年修復前的山牆與青苔屋頂",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-gable-roof.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "美人山下",
+    note: "山牆土角磚裸露，屋頂覆著青苔與老瓦，遠處田野與人影讓老屋和土地關係更加清楚。"
+  },
+  {
+    title: "2004 年修復前的青苔屋瓦與窗牆",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2004-moss-roof-window.jpg",
+    date: "2004-04-03",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "北海鄉情",
+    note: "屋瓦上厚厚青苔與剝落牆面相互映照，是土角厝修復前最有歲月感的一組紀錄。"
+  },
+  {
     title: "2012 年修繕前的土角磚牆",
     category: "childhood",
     src: "assets/photos/web/old-house-2012-before-wall.jpg",
@@ -178,6 +258,116 @@ const galleryItems = [
     gps: "待補",
     song: "茶香歲月",
     note: "穿著襯衫與背心站在茶葉與茶具前，這一站是人生路上很特別的轉折。"
+  },
+  {
+    title: "旭峰茗茶照片 01",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-1055.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "從 Google Drive「旭峰茗茶」資料夾加入的茶行照片，補上茶行歲月的現場記憶。"
+  },
+  {
+    title: "旭峰茗茶照片 02",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-1054.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "茶行空間、茶品與待客日常，都是人生轉折裡值得保存的一頁。"
+  },
+  {
+    title: "旭峰茗茶照片 03",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-9136.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "茶行照片延伸了原本的茶席記錄，讓這段生活經驗更完整。"
+  },
+  {
+    title: "旭峰茗茶照片 04",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-fil26214.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "茶香、器物與店內氛圍，保留茶行歲月裡的溫度。"
+  },
+  {
+    title: "旭峰茗茶照片 05",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-2019-11-11.jpg",
+    date: "2019-11-11",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "2019 年留下的茶行照片，補進人生故事裡茶與待客的一段。"
+  },
+  {
+    title: "旭峰茗茶照片 06",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-5.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "茶行裡的日常畫面，讓這段茶香歲月不只停在一兩張照片。"
+  },
+  {
+    title: "旭峰茗茶照片 07",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-0244.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "茶行舊影持續補齊，讓網站相簿更接近完整的生活紀錄。"
+  },
+  {
+    title: "旭峰茗茶照片 08",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-0247.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "從茶具、空間到人的身影，都是茶行故事的一部分。"
+  },
+  {
+    title: "旭峰茗茶照片 09",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-0248.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "茶行照片加入後，工程人生之外的生活面貌也更清楚。"
+  },
+  {
+    title: "旭峰茗茶照片 10",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-0250.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "這張照片與既有茶行相簿互相呼應，保留一段茶香與人情的記憶。"
+  },
+  {
+    title: "旭峰茗茶照片 11",
+    category: "engineering",
+    src: "assets/photos/web/tea-shop-xufeng-img-0240.jpg",
+    date: "待補",
+    place: "旭峰茗茶",
+    gps: "待補",
+    song: "茶香歲月",
+    note: "Google Drive 裡的旭峰茗茶照片已存入網站，用實體圖片呈現在相簿中。"
   },
   {
     title: "捷運隧道裡的工程人",
