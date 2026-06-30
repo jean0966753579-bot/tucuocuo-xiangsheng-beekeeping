@@ -600,16 +600,6 @@ const galleryItems = [
     note: "近看蜂箱口聚集的蜜蜂，能清楚感受到蜂群活動與蜂場生命力。"
   },
   {
-    title: "城市裡的翔勝養蜂足跡",
-    category: "beekeeping",
-    src: "assets/photos/web/beekeeping-xiangsheng-city-building.jpg",
-    date: "待補",
-    place: "翔勝養蜂相關地點",
-    gps: "待補",
-    song: "守望蜂鄉",
-    note: "城市街景與建築外觀，補上翔勝養蜂故事中從蜂場延伸到生活場域的一角。"
-  },
-  {
     title: "滿框蜂蜜與蜂箱",
     category: "beekeeping",
     src: "assets/photos/web/beekeeping-xiangsheng-honey-frame-and-box.jpg",

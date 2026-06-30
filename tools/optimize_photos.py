@@ -66,7 +66,6 @@ FILES = [
     "beekeeping-xiangsheng-team-harvest-line.jpg",
     "beekeeping-xiangsheng-forest-apiary-overview.jpg",
     "beekeeping-xiangsheng-bees-on-box-close.jpg",
-    "beekeeping-xiangsheng-city-building.jpg",
     "beekeeping-xiangsheng-honey-frame-and-box.jpg",
     "beekeeping-xiangsheng-open-box-wild-comb.jpg",
     "beekeeping-xiangsheng-truck-loaded-boxes.jpg",
