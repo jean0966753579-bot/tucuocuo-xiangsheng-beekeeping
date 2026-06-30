@@ -271,6 +271,35 @@ img {
   font-size: clamp(1.8rem, 4vw, 3rem);
 }
 
+.opening-story {
+  padding-top: 0;
+}
+
+.opening-story__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.opening-story__grid article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 250, 240, 0.78);
+}
+
+.opening-story__grid h3 {
+  margin: 0 0 10px;
+  color: var(--clay-dark);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.opening-story__grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .chapter-grid,
 .month-grid,
 .collection-grid,
@@ -875,6 +904,7 @@ img {
   }
 
   .intro-grid,
+  .opening-story__grid,
   .chapter-grid,
   .month-grid,
   .collection-grid,
