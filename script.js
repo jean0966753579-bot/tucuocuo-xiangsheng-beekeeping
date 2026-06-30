@@ -362,13 +362,13 @@ const articleItems = [
     keywords: "工程 捷運 木柵線 淡水線 板南線 信義線 環狀線"
   },
   {
-    title: "收藏也是一種記憶整理",
+    title: "和田玉收藏小天地",
     date: "2026-06-28",
     tag: "收藏館",
     category: "collection",
-    summary: "玉、茶、紫砂壺、老照片、老農具與老地圖，未來都可以成為數位典藏的一部分。",
-    link: "stories.html#collectionRoom",
-    keywords: "和闐玉 台灣茶 紫砂壺 老照片 老農具 老地圖"
+    summary: "十多年和田玉收藏經驗，另以專屬網站整理籽料、玉質、工藝與收藏心得。",
+    link: "https://jean0966753579-bot.github.io/jianhetian-collection/",
+    keywords: "和田玉 和闐玉 籽料 玉質 工藝 收藏 台灣茶 紫砂壺 老照片 老農具 老地圖"
   }
 ];
 
@@ -808,15 +808,20 @@ function renderArticles(targetId, filter = "all", limit = articleItems.length) {
     .filter((item) => filter === "all" || item.category === filter)
     .slice(0, limit);
 
-  target.innerHTML = items.map((item) => `
+  target.innerHTML = items.map((item) => {
+    const isExternal = /^https?:\/\//.test(item.link);
+    const linkAttrs = isExternal ? ' target="_blank" rel="noopener"' : "";
+
+    return `
     <article class="article-card">
       <time datetime="${item.date}">${item.date}</time>
       <p class="tag">${item.tag}</p>
       <h3>${item.title}</h3>
       <p>${item.summary}</p>
-      <a href="${item.link}">繼續閱讀</a>
+      <a href="${item.link}"${linkAttrs}>繼續閱讀</a>
     </article>
-  `).join("");
+  `;
+  }).join("");
 }
 
 function renderReflections(targetId, filter = "all", limit = reflectionItems.length) {

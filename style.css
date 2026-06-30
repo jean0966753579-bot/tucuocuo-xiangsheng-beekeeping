@@ -358,6 +358,13 @@ img {
   font-weight: 800;
 }
 
+.collection-grid a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--clay-dark);
+  font-weight: 800;
+}
+
 .life-timeline {
   display: grid;
   gap: 14px;
