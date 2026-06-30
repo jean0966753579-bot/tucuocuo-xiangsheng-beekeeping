@@ -51,6 +51,15 @@ FILES = [
     "beekeeping-frame-family.jpg",
     "beekeeping-honey-extractor.jpg",
     "beekeeping-xiangsheng-boxes.jpg",
+    "beekeeping-xiangsheng-honey-drum-delivery.jpg",
+    "beekeeping-xiangsheng-honeycomb-frame-portrait.jpg",
+    "beekeeping-xiangsheng-open-hive-frame.jpg",
+    "beekeeping-xiangsheng-carrying-hive-boxes.jpg",
+    "beekeeping-xiangsheng-checking-frames.jpg",
+    "beekeeping-xiangsheng-apiary-work.jpg",
+    "beekeeping-xiangsheng-smoker-and-frames.jpg",
+    "beekeeping-xiangsheng-three-person-harvest.jpg",
+    "beekeeping-xiangsheng-honeycomb-close-portrait.jpg",
     "nanxi-honey-harvest-2018.jpg",
 ]
 

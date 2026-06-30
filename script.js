@@ -448,6 +448,96 @@ const galleryItems = [
     gps: "待補",
     song: "山城蜂路",
     note: "白色蜂箱散落在樹下，箱身上的翔勝茶蜂園字樣，讓家族故事有了清楚的地標。"
+  },
+  {
+    title: "搬運蜂蜜桶的現場",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-honey-drum-delivery.jpg",
+    date: "待補",
+    place: "翔勝養蜂",
+    gps: "待補",
+    song: "一瓶蜂蜜",
+    note: "蜂蜜桶從門口搬入，旁邊可見蜂蜜產品與作業工具，記錄養蜂工作從山林到店面的接續。"
+  },
+  {
+    title: "手持蜂脾的採蜜身影",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-honeycomb-frame-portrait.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "一瓶蜂蜜",
+    note: "手持蜂脾站在蜂箱旁，蜂群飛舞其中，呈現採蜜現場最直接的工作畫面。"
+  },
+  {
+    title: "開箱查看蜂脾",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-open-hive-frame.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山城蜂路",
+    note: "蜂箱打開後抽出蜂脾檢查，身旁的蜂農與工具讓採蜜流程更完整。"
+  },
+  {
+    title: "扛起蜂箱的蜂農",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-carrying-hive-boxes.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山腳下的蜜香",
+    note: "蜂農戴著面網在林間搬運蜂箱，蜂群環繞，保留蜂場勞動的重量與節奏。"
+  },
+  {
+    title: "蜂箱前整理蜂脾",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-checking-frames.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "兩位蜂農在蜂箱前整理蜂脾與巢框，這是採蜜前後最細緻也最耗工的環節。"
+  },
+  {
+    title: "林間蜂場作業",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-apiary-work.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "蜂箱散布在樹林裡，蜂農分工檢查蜂脾與蜂箱，呈現山林蜂場的工作環境。"
+  },
+  {
+    title: "煙燻與抽框",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-smoker-and-frames.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山城蜂路",
+    note: "一邊使用煙燻器安撫蜂群，一邊抽出巢框檢查，記錄蜂場作業的關鍵步驟。"
+  },
+  {
+    title: "三人協力採蜜",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-three-person-harvest.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山腳下的蜜香",
+    note: "三位蜂農圍在蜂箱旁分工處理巢框，蜂群飛舞中看見家族產業的協力。"
+  },
+  {
+    title: "蜂脾近照與蜂農",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-xiangsheng-honeycomb-close-portrait.jpg",
+    date: "待補",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "一瓶蜂蜜",
+    note: "近距離看見蜂脾上的蜂蜜與蜂群，也看見蜂農長年累積的熟練與穩定。"
   }
 ];
 
