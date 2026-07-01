@@ -370,16 +370,6 @@ const galleryItems = [
     note: "從 Google Drive「旭峰茗茶」資料夾加入的茶行照片，補上茶行歲月的現場記憶。"
   },
   {
-    title: "旭峰茗茶照片 02",
-    category: "engineering",
-    src: "assets/photos/web/tea-shop-xufeng-img-1054.jpg",
-    date: "待補",
-    place: "旭峰茗茶",
-    gps: "待補",
-    song: "茶香歲月",
-    note: "茶行空間、茶品與待客日常，都是人生轉折裡值得保存的一頁。"
-  },
-  {
     title: "旭峰茗茶照片 03",
     category: "engineering",
     src: "assets/photos/web/tea-shop-xufeng-img-9136.jpg",
@@ -388,26 +378,6 @@ const galleryItems = [
     gps: "待補",
     song: "茶香歲月",
     note: "茶行照片延伸了原本的茶席記錄，讓這段生活經驗更完整。"
-  },
-  {
-    title: "旭峰茗茶照片 04",
-    category: "engineering",
-    src: "assets/photos/web/tea-shop-xufeng-fil26214.jpg",
-    date: "待補",
-    place: "旭峰茗茶",
-    gps: "待補",
-    song: "茶香歲月",
-    note: "茶香、器物與店內氛圍，保留茶行歲月裡的溫度。"
-  },
-  {
-    title: "旭峰茗茶照片 05",
-    category: "engineering",
-    src: "assets/photos/web/tea-shop-xufeng-2019-11-11.jpg",
-    date: "2019-11-11",
-    place: "旭峰茗茶",
-    gps: "待補",
-    song: "茶香歲月",
-    note: "2019 年留下的茶行照片，補進人生故事裡茶與待客的一段。"
   },
   {
     title: "旭峰茗茶照片 06",
@@ -513,7 +483,7 @@ const galleryItems = [
     title: "茶畫下的奉茶時刻",
     category: "engineering",
     src: "assets/photos/web/tea-service-portrait.jpg",
-    date: "待補",
+    date: "2019-11-11",
     place: "茶行",
     gps: "待補",
     song: "茶香歲月",
