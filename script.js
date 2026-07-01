@@ -170,6 +170,106 @@ const galleryItems = [
     note: "雨水從屋簷落下，土角牆與盆栽在濕潤空氣裡顯得更有土地感。"
   },
   {
+    title: "老屋前的家族合影",
+    category: "childhood",
+    src: "assets/photos/web/old-house-family-reunion-front.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "山海之間",
+    note: "一家人在修復後的土角厝前合影，老牆、屋瓦與人的笑容站在一起，讓百年老屋不只是建築，也成了家族相聚的所在。"
+  },
+  {
+    title: "紅磚屋內的團圓餐桌",
+    category: "childhood",
+    src: "assets/photos/web/old-house-family-banquet.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "三合院的笑聲",
+    note: "屋內紅磚牆與滿桌菜餚圍住一場團圓，這樣的照片把老屋修復後重新聚人的溫度留下來。"
+  },
+  {
+    title: "兄弟坐看金山山海",
+    category: "childhood",
+    src: "assets/photos/web/old-house-brothers-overlook.jpg",
+    date: "待補",
+    place: "金山美人山下",
+    gps: "概略位置待補",
+    song: "北海鄉情",
+    note: "四人坐在山坡欄前，身後是田畦、城鎮與遠山。這一眼望出去，像把離鄉、返鄉與守望都收進同一幅風景。"
+  },
+  {
+    title: "暮色裡亮起燈的土角厝",
+    category: "childhood",
+    src: "assets/photos/web/old-house-restored-evening.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "夜裡的故鄉",
+    note: "傍晚山色漸暗，屋內燈光從木窗透出來。土角厝在暮色中安靜發亮，像一盞替家人等門的燈。"
+  },
+  {
+    title: "修復土角牆的泥作現場",
+    category: "childhood",
+    src: "assets/photos/web/old-house-restoration-mud-wall-01.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "修舊如舊",
+    note: "工人踩在老木料上補砌土角牆，泥水、磚石與汗水交在一起，記錄老屋重生最辛苦也最實在的工序。"
+  },
+  {
+    title: "一磚一土補回家的形狀",
+    category: "childhood",
+    src: "assets/photos/web/old-house-restoration-mud-wall-02.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "老屋重生",
+    note: "土角牆一層一層補回去，旁人戴著斗笠守在現場。老屋不是一次完成的，而是靠許多雙手慢慢接回家的形狀。"
+  },
+  {
+    title: "修復前的屋身與山林",
+    category: "childhood",
+    src: "assets/photos/web/old-house-before-2016-front.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "美人山下",
+    note: "修復前的牆面斑駁、門窗暫封，屋後仍是濃綠山林。這張照片保留了老屋等待整理、等待被重新看見的時刻。"
+  },
+  {
+    title: "紅磚牆上的斗笠與農具",
+    category: "childhood",
+    src: "assets/photos/web/old-house-farm-tools-hats.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "農家的孩子",
+    note: "斗笠掛在紅磚牆上，旁邊還有舊農具與月曆。這些不是裝飾，而是農家日常留下的手感與時間。"
+  },
+  {
+    title: "牆上的古早耙具",
+    category: "childhood",
+    src: "assets/photos/web/old-house-farm-rake.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "農家的孩子",
+    note: "老耙具掛在紅磚牆前，鐵齒與木柄留下使用過的痕跡，像把上一代人的力氣靜靜收在牆上。"
+  },
+  {
+    title: "紅磚牆上的舊犁具",
+    category: "childhood",
+    src: "assets/photos/web/old-house-old-plow.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "概略位置待補",
+    song: "水水田莊",
+    note: "舊犁具高掛屋內，木頭與鐵件都有歲月磨出的顏色。它提醒人記得，這一棟老屋曾經連著田、牛、泥土與一家人的生計。"
+  },
+  {
     title: "美人山與土角厝意象",
     category: "childhood",
     src: "assets/photos/web/old-house-meiren-mountain-composite.jpg",
