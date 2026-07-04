@@ -1060,6 +1060,126 @@ const musicTracks = [
   }
 ];
 
+const downloadedMusicTracks = [
+  "美人山下的鐘擺.mp3",
+  "留給一朵花的時間.mp3",
+  "美人山頭.mp3",
+  "金包里的回甘.mp3",
+  "一葉一心.mp3",
+  "百年土埆厝的茶湯.mp3",
+  "土埆厝的燈火.mp3",
+  "三餐四季.mp3",
+  "默默無言的溫暖.mp3",
+  "美人山下的歸途.mp3",
+  "美人山下的承諾.mp3",
+  "自己就是自己的風水.mp3",
+  "自己的風景.mp3",
+  "心底磨出的溫柔.mp3",
+  "把悲傷釀成回甘.mp3",
+  "美人山下的歸宿.mp3",
+  "美人山下.mp3",
+  "把汗水釀成歲月芬芳.mp3",
+  "播田花開時.mp3",
+  "慢慢釀.mp3",
+  "Phûng_khiùn_sú_fu_hî_mong.mp3",
+  "一路追著花開.mp3",
+  "一襟清夢.mp3",
+  "微笑，不需要理由.mp3",
+  "第十一座島.mp3",
+  "一生守護的承諾.mp3",
+  "玉米田的約定 (1).mp3",
+  "人生親像蜜香紅茶 (1).mp3",
+  "山腳下的蜜香 (1).mp3",
+  "山腳下的炊煙.mp3"
+];
+
+const googleDriveMusicTracks = [
+  { title: "養蜂人的心事", id: "1kIdkmqRY8Fl8KnhQ6QbpqgDCoHVel_Z7" },
+  { title: "鏡中的陌生人", id: "1NJjTl1wf7Vhxx0h01Ndkm4f6WFkGMnWl" },
+  { title: "花香裡的等待", id: "1mqn66Hnl4Oj8gzd7Tll3ibbx1n9mggxQ" },
+  { title: "苦楝花開時", id: "1UfSzUYvw_0UaoNX8yzOSuQDREgGOiKUE" },
+  { title: "蕎麥花開時", id: "1DVCPwWoWKRleDLfxLhxX11JJya4ow85n" },
+  { title: "平凡日子活成詩", id: "1WojIcW2c1OK4-RbfaCbEgA3p0JCdyoqo" },
+  { title: "等風吹穩", id: "1VdmLVHZ7ZnYgkIsm5Mr5Jj_fpQUx9hUS" },
+  { title: "繡球花綻放的午後", id: "1HOLa6Of4cjv5dD7zIReu6p5UDWMcWbE7" },
+  { title: "五月風裡的甘甜", id: "12SJFqKL8jEKyiApbfFO7ppnHPZedXooC" },
+  { title: "花影與時光", id: "18fn3WOnDnSIV3jDTW1Li4BvT_BQPwRVh" },
+  { title: "土埆厝的陽光", id: "1U9vCTiA9IjYekhVmdXEJISPdwRWh7Bye" },
+  { title: "掌心的餘溫", id: "1ZY9qnTtkYfsfM9Ekp0_qwOYY_nPoWhPI" },
+  { title: "把日子過成喜劇", id: "1o88qfGUrDooVsth2DDGLCyjV9Ai3bWFg" },
+  { title: "花開的回答", id: "1Tvhgvy1h8euBTfky0I2dU04v8PHagQ12" },
+  { title: "鋼筋與花香", id: "1EoEtU6b3rTRiWQCxyNnh0BiBaCqi0b4m" },
+  { title: "花開處便是家", id: "1VdODKzbjK--6EV1I-Vip5uGOVKTO6x_R" },
+  { title: "幸福釀成了糖", id: "1psQYG1kqF6_lRyoHQM-8rB5tRECRgY1N" },
+  { title: "餐桌上的遠方", id: "19FJ4rsUWR791SXK1RopeTN1jpi1Jz4En" },
+  { title: "大地寫下的詩行", id: "1UQRp-_Rz0OtDkL17mMWstk5BLHx0cK3a" },
+  { title: "琥珀色的河", id: "1vIctd6_sXd-e1KBN4_Afn86qBITsl1p1" },
+  { title: "山風捎來的甘甜", id: "1bsHiuzR4tq0eWT_kaSbiAAZ3Ey6vDKfZ" },
+  { title: "美人山下的等待", id: "1mdD4Rcm7RiEyJgmr4n0ToQNaK76wtpzQ" },
+  { title: "土埆厝的晨光", id: "18AQRRJ3hNTGjfMCWKPvtn2cRRdXMI6Ja" },
+  { title: "有田就餓不死", id: "1lohPLzgsvG0Q1xGSHuoZ-2GCdmNjqxEz" },
+  { title: "瓜香滿老厝", id: "1anUOfeJNmwvQGmighsHr3Nodex4u2hO_" },
+  { title: "Phûng_khiùn_sú_fu_hî_mong-1", id: "1H8j98Jxzwhs9ypBjxLttT4Aa5vNLoS99" },
+  { title: "Phûng_siông_ke_Sṳ̀n_nok", id: "1Mb3R_UuWUBpsHcuruY-ld8Dnp3cas_eX" },
+  { title: "盛夏之前的約定", id: "1sx7bYPYUA6-sRvOjSzqMkFlQSEqck232" },
+  { title: "慢慢釀", id: "14ni7NoyLFNmV92_GWhbQoKmvcoql0FJk" },
+  { title: "播田花開時", id: "1ofkoC7z_k9RRT1LLI74UZSW1OSpSyuyV" },
+  { title: "把汗水釀成歲月芬芳", id: "1aOB4dwYTDnzBj0QPM-bUMZsAGxfs5NX1" },
+  { title: "晴耕雨讀", id: "108sp0iowRKlC77ZHCZiTHE92OxMU5Wa4" },
+  { title: "美人山下的歸宿", id: "1LUQ_2aA8xyIK0eC52IrKPOwOZz3pleqD" },
+  { title: "把悲傷釀成回甘", id: "1uelsu9sDUNinBUGikP4sT58seDlopfqn" },
+  { title: "自己的花期", id: "1CEe29wi-7IO1fALBt2J6aDVbvRy6uhlo" },
+  { title: "土埆厝的炊煙", id: "11rZmmURRu1sF3-asCBfLlISbTiuu8urk" },
+  { title: "美人山下的歸途", id: "1Gb6Z9V0LUcmO0xiU4sRDGBzWmkSGCeMp" },
+  { title: "金包里的風", id: "1GBOP_QCvYD1mjsxshj4KrphmM1dxCzQH" },
+  { title: "默默無言的溫暖", id: "166Rwx3bEZh5TpcgMmeyHOyiJX5PxdasU" },
+  { title: "三餐四季", id: "1oT9xhlMZNKUDH992WtD1wJ3QYPsUX3vG" },
+  { title: "土埆厝的燈火", id: "1UwDJgV0BmTJHI5eNxHd1P0wEZRuFc3Bt" },
+  { title: "百年土埆厝的茶湯", id: "1LKIr6Y5_26zwSchm0DpbGJTHVEV6ThIk" },
+  { title: "一葉一心", id: "1E7TXpPIO5HVn0sX9lyAGRz3hSq-5J5oJ" },
+  { title: "金包里的回甘", id: "1H5fgnKOdcMFXeCBjUdntQ8QkOyKLs_10" },
+  { title: "輕一點，人生才走得遠", id: "1rFmlHTLuNnRXo4t7McfThMquaGEB66e8" },
+  { title: "留給一朵花的時間", id: "1JAneQVhjLJuE5riyuVkE2yFs51O1PM7F" },
+  { title: "美人山下的鐘擺", id: "1kX__z6WUvUHL9hqf5ap7iYFbZpqL1B1U" },
+  { title: "美人山腳下", id: "1pwNHtQLggbBrmrB5dZLiCtQPrdQwCBPQ" },
+  { title: "當阿嬤...", id: "1291sZM-yfyYoea-Iky_3XYrNMeC8ISa6" },
+  { title: "工管處---", id: "1Qk8alPkgOFoWN03cUdlDuWaDZqWl1Pxc" },
+  { title: "工管處-團唱", id: "1U_RFdQ44d13GBV6iccvfj4akkgVNMybM" },
+  { title: "掌聲裡的交接", id: "1t56PrMlzZcQuO2BgX2phAP3Zhzw_2ejE" },
+  { title: "每一滴琥珀", id: "1FHNuKZh1ObZRdRbK6A1OeKhWNyJtGtev" }
+];
+
+const musicTrackTitles = new Set(musicTracks.map((track) => track.title));
+const addMusicTrack = (track) => {
+  if (musicTrackTitles.has(track.title)) return;
+  musicTracks.push({
+    artist: "生命故事歌曲",
+    cover: "",
+    story: "新增到網站音樂資料夾的 MP3。",
+    lyrics: `${track.title}\n\n這首歌已加入網站 MP3 音樂播放清單。`,
+    ...track
+  });
+  musicTrackTitles.add(track.title);
+};
+
+downloadedMusicTracks.forEach((fileName) => {
+  const title = fileName.replace(/\.mp3$/i, "");
+  addMusicTrack({
+    title,
+    src: `assets/music/${fileName}`
+  });
+});
+
+googleDriveMusicTracks.forEach((track) => {
+  addMusicTrack({
+    title: track.title,
+    artist: "Google Drive MP3",
+    src: `https://drive.google.com/uc?export=download&id=${track.id}`,
+    story: "從 Google Drive 音樂資料夾加入的 MP3。",
+    lyrics: `${track.title}\n\n這首歌來自 Google Drive 音樂資料夾。`
+  });
+});
+
 const oldHouseTimeline = [
   { year: "1910", title: "簡家土角厝落成", text: "老屋建於一九一〇年，原本是傳統一條龍格局，見證金山美人山下百年農村歲月。" },
   { year: "增建", title: "家族人口增加，左右護龍陸續形成", text: "隨著家族人口增加，老屋陸續增建左右護龍，只可惜左側廂房後來年久崩壞。" },
