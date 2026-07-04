@@ -1172,7 +1172,7 @@ googleDriveMusicTracks.forEach((track) => {
   addMusicTrack({
     title: track.title,
     artist: "Google Drive MP3",
-    src: `https://drive.google.com/uc?export=download&id=${track.id}`,
+    src: `https://drive.usercontent.google.com/download?id=${track.id}&export=download`,
     story: "從 Google Drive 音樂資料夾加入的 MP3。",
     lyrics: `${track.title}\n\n這首歌來自 Google Drive 音樂資料夾。`
   });
@@ -1442,11 +1442,56 @@ function setupMusic() {
 
   if (!playlist || !audio || !trackTitle || !trackMeta || !lyricsTitle || !lyricsText) return;
 
-  function selectTrack(track, button, shouldPlay = false) {
+  const buttonsByTrack = new Map();
+  let selectedTrack = null;
+  let selectedButton = null;
+  let loadCheckId = 0;
+  let shouldAutoPlaySelectedTrack = false;
+
+  const isGoogleDriveSource = (src = "") => /drive\.google\.com|drive\.usercontent\.google\.com/i.test(src);
+  const isLocalAudioSource = (src = "") => Boolean(src) && !/^https?:\/\//i.test(src);
+  const getMetaText = (track, extra = "") => [track.artist, track.story, extra].filter(Boolean).join("｜");
+
+  function findNextLocalTrack(track) {
+    const startIndex = Math.max(0, musicTracks.indexOf(track));
+
+    for (let offset = 1; offset <= musicTracks.length; offset += 1) {
+      const candidate = musicTracks[(startIndex + offset) % musicTracks.length];
+      if (isLocalAudioSource(candidate.src)) {
+        return {
+          track: candidate,
+          button: buttonsByTrack.get(candidate)
+        };
+      }
+    }
+
+    return null;
+  }
+
+  function showLoadProblem(track, message, shouldFallback = false) {
+    if (shouldFallback) {
+      const fallback = findNextLocalTrack(track);
+
+      if (fallback?.button) {
+        trackMeta.textContent = getMetaText(track, `${message}已自動切換到下一首可播放 MP3。`);
+        selectTrack(fallback.track, fallback.button, true, true);
+        return;
+      }
+    }
+
+    trackMeta.textContent = getMetaText(track, message);
+  }
+
+  function selectTrack(track, button, shouldPlay = false, skipFallback = false) {
+    loadCheckId += 1;
+    selectedTrack = track;
+    selectedButton = button;
+    shouldAutoPlaySelectedTrack = shouldPlay;
+
     document.querySelectorAll(".track-button").forEach((node) => node.classList.remove("active"));
     button.classList.add("active");
     trackTitle.textContent = track.title;
-    trackMeta.textContent = `${track.artist}｜${track.story}`;
+    trackMeta.textContent = getMetaText(track);
     lyricsTitle.textContent = track.title;
     lyricsText.textContent = track.lyrics;
 
@@ -1460,12 +1505,37 @@ function setupMusic() {
 
     audio.load();
 
+    if (track.src && isGoogleDriveSource(track.src)) {
+      const currentLoadCheckId = loadCheckId;
+
+      window.setTimeout(() => {
+        if (currentLoadCheckId !== loadCheckId || selectedTrack !== track) return;
+        if (audio.readyState > 0) return;
+
+        showLoadProblem(
+          track,
+          "Google Drive 音檔目前無法直接載入，請確認檔案分享權限已設為「知道連結的任何人可查看」。",
+          shouldPlay && !skipFallback
+        );
+      }, 7000);
+    }
+
     if (shouldPlay && track.src) {
       audio.play().catch(() => {
-        trackMeta.textContent = `${track.artist}｜${track.story}｜若瀏覽器阻擋自動播放，請再按播放器的播放鍵。`;
+        trackMeta.textContent = getMetaText(track, "若瀏覽器阻擋自動播放，請再按播放器的播放鍵。");
       });
     }
   }
+
+  audio.addEventListener("error", () => {
+    if (!selectedTrack) return;
+
+    showLoadProblem(
+      selectedTrack,
+      "音檔載入失敗，請確認 MP3 檔案存在並可公開讀取。",
+      shouldAutoPlaySelectedTrack && isGoogleDriveSource(selectedTrack.src)
+    );
+  });
 
   playlist.innerHTML = "";
 
@@ -1476,9 +1546,16 @@ function setupMusic() {
     button.innerHTML = `<strong>${track.title}</strong><span>${track.artist}</span>`;
     button.addEventListener("click", () => selectTrack(track, button, true));
     playlist.appendChild(button);
-
-    if (index === 0) selectTrack(track, button);
+    buttonsByTrack.set(track, button);
   });
+
+  const firstPlayableTrack = musicTracks.find((track) => isLocalAudioSource(track.src))
+    || musicTracks.find((track) => track.src)
+    || musicTracks[0];
+
+  if (firstPlayableTrack) {
+    selectTrack(firstPlayableTrack, buttonsByTrack.get(firstPlayableTrack), false);
+  }
 }
 
 function setupSearch() {
