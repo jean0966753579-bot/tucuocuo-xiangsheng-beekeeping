@@ -713,6 +713,15 @@ const galleryItems = [
 
 const articleItems = [
   {
+    title: "北海鄉情．山海茶路",
+    date: "2026-07-05",
+    tag: "山海茶路",
+    category: "life",
+    summary: "從金山佃農歲月、父親總舖師的灶爐記憶，到山海古道、苗栗翔勝養蜂與工程師的歸鄉路，整理成一篇總綱式生命文章。",
+    link: "stories.html#beihaiTeaRoad",
+    keywords: "北海鄉情 山海茶路 金山 佃農 總舖師 北海岸 古道 茶路 農產 苗栗 翔勝養蜂 女婿 假日蜂農 柑橘 檸檬 工程師 退休 歸鄉"
+  },
+  {
     title: "安全帽下的三十五年",
     date: "2026-06-30",
     tag: "生命誌",
