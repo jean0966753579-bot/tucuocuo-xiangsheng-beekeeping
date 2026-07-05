@@ -742,7 +742,38 @@ img {
 
 .music-player audio {
   width: 100%;
-  margin: 16px 0;
+  margin: 16px 0 10px;
+}
+
+.player-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.player-action {
+  min-height: 42px;
+  padding: 9px 16px;
+  border: 1px solid rgba(215, 154, 43, 0.48);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--clay-dark);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.player-action:hover,
+.player-action:focus-visible {
+  border-color: var(--honey);
+  background: var(--honey-soft);
+}
+
+.player-action.active,
+.player-action[aria-pressed="true"] {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: var(--paper);
 }
 
 .playlist {

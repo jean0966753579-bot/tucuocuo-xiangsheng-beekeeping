@@ -33,6 +33,10 @@
         <h2 id="trackTitle">選擇一首歌曲</h2>
         <p id="trackMeta">點選左側歌曲後，這裡會顯示歌曲說明。</p>
         <audio id="audioPlayer" controls preload="metadata"></audio>
+        <div class="player-actions" aria-label="歌曲播放控制">
+          <button id="repeatToggle" class="player-action" type="button" aria-pressed="false">重複播放</button>
+          <button id="nextTrack" class="player-action" type="button">聽下一首歌</button>
+        </div>
         <div class="playlist" id="playlist"></div>
       </div>
       <article class="lyrics-panel">

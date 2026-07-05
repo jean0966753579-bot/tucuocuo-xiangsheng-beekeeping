@@ -1381,6 +1381,8 @@ function setupMusic() {
   const trackMeta = document.querySelector("#trackMeta");
   const lyricsTitle = document.querySelector("#lyricsTitle");
   const lyricsText = document.querySelector("#lyricsText");
+  const repeatToggle = document.querySelector("#repeatToggle");
+  const nextTrack = document.querySelector("#nextTrack");
 
   if (!playlist || !audio || !trackTitle || !trackMeta || !lyricsTitle || !lyricsText) return;
 
@@ -1394,6 +1396,17 @@ function setupMusic() {
   const isLocalAudioSource = (src = "") => Boolean(src) && !/^https?:\/\//i.test(src);
   const getMetaText = (track, extra = "") => [track.artist, track.story, extra].filter(Boolean).join("｜");
   const playlistTracks = musicTracks.filter((track) => isLocalAudioSource(track.src));
+
+  function getNextTrack(track) {
+    if (!playlistTracks.length) return null;
+    const currentIndex = playlistTracks.indexOf(track);
+    const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % playlistTracks.length : 0;
+    const next = playlistTracks[nextIndex];
+    return {
+      track: next,
+      button: buttonsByTrack.get(next)
+    };
+  }
 
   function findNextLocalTrack(track) {
     const startIndex = Math.max(0, playlistTracks.indexOf(track));
@@ -1478,6 +1491,19 @@ function setupMusic() {
       "音檔載入失敗，請確認 MP3 檔案存在並可公開讀取。",
       shouldAutoPlaySelectedTrack && isGoogleDriveSource(selectedTrack.src)
     );
+  });
+
+  repeatToggle?.addEventListener("click", () => {
+    audio.loop = !audio.loop;
+    repeatToggle.classList.toggle("active", audio.loop);
+    repeatToggle.setAttribute("aria-pressed", String(audio.loop));
+    repeatToggle.textContent = audio.loop ? "重複播放中" : "重複播放";
+  });
+
+  nextTrack?.addEventListener("click", () => {
+    const next = getNextTrack(selectedTrack);
+    if (!next?.button) return;
+    selectTrack(next.track, next.button, true);
   });
 
   playlist.innerHTML = "";
