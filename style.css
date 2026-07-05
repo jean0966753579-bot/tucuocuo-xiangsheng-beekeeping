@@ -315,6 +315,7 @@ img {
 .collection-grid article,
 .checklist-grid article,
 .search-panel,
+.video-card,
 .video-placeholder,
 .map-placeholder {
   border: 1px solid var(--line);
@@ -418,6 +419,47 @@ img {
 .map-placeholder span {
   margin: 0;
   color: rgba(255, 250, 240, 0.86);
+}
+
+.video-card {
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--forest);
+  object-fit: cover;
+}
+
+.video-card div {
+  padding: 18px 20px 20px;
+}
+
+.video-card span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--forest);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.video-card strong {
+  display: block;
+  color: var(--clay-dark);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.video-card p {
+  color: var(--muted);
+}
+
+.video-card a {
+  color: var(--clay-dark);
+  font-weight: 800;
 }
 
 .month-card,
