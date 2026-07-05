@@ -1383,6 +1383,7 @@ function setupMusic() {
   const lyricsText = document.querySelector("#lyricsText");
   const repeatToggle = document.querySelector("#repeatToggle");
   const nextTrack = document.querySelector("#nextTrack");
+  const autoPlayAll = document.querySelector("#autoPlayAll");
 
   if (!playlist || !audio || !trackTitle || !trackMeta || !lyricsTitle || !lyricsText) return;
 
@@ -1391,6 +1392,7 @@ function setupMusic() {
   let selectedButton = null;
   let loadCheckId = 0;
   let shouldAutoPlaySelectedTrack = false;
+  let shouldAutoPlayAll = false;
 
   const isGoogleDriveSource = (src = "") => /drive\.google\.com|drive\.usercontent\.google\.com/i.test(src);
   const isLocalAudioSource = (src = "") => Boolean(src) && !/^https?:\/\//i.test(src);
@@ -1436,6 +1438,24 @@ function setupMusic() {
     }
 
     trackMeta.textContent = getMetaText(track, message);
+  }
+
+  function setRepeatMode(isEnabled) {
+    audio.loop = isEnabled;
+    repeatToggle?.classList.toggle("active", isEnabled);
+    repeatToggle?.setAttribute("aria-pressed", String(isEnabled));
+    if (repeatToggle) {
+      repeatToggle.textContent = isEnabled ? "重複播放中" : "重複播放";
+    }
+  }
+
+  function setAutoPlayAllMode(isEnabled) {
+    shouldAutoPlayAll = isEnabled;
+    autoPlayAll?.classList.toggle("active", isEnabled);
+    autoPlayAll?.setAttribute("aria-pressed", String(isEnabled));
+    if (autoPlayAll) {
+      autoPlayAll.textContent = isEnabled ? "自動播放全部歌中" : "自動播放全部歌";
+    }
   }
 
   function selectTrack(track, button, shouldPlay = false, skipFallback = false) {
@@ -1494,13 +1514,29 @@ function setupMusic() {
   });
 
   repeatToggle?.addEventListener("click", () => {
-    audio.loop = !audio.loop;
-    repeatToggle.classList.toggle("active", audio.loop);
-    repeatToggle.setAttribute("aria-pressed", String(audio.loop));
-    repeatToggle.textContent = audio.loop ? "重複播放中" : "重複播放";
+    const nextRepeatState = !audio.loop;
+    setRepeatMode(nextRepeatState);
+    if (nextRepeatState) {
+      setAutoPlayAllMode(false);
+    }
   });
 
   nextTrack?.addEventListener("click", () => {
+    const next = getNextTrack(selectedTrack);
+    if (!next?.button) return;
+    selectTrack(next.track, next.button, true);
+  });
+
+  autoPlayAll?.addEventListener("click", () => {
+    const nextAutoPlayState = !shouldAutoPlayAll;
+    setAutoPlayAllMode(nextAutoPlayState);
+    if (nextAutoPlayState) {
+      setRepeatMode(false);
+    }
+  });
+
+  audio.addEventListener("ended", () => {
+    if (!shouldAutoPlayAll || audio.loop) return;
     const next = getNextTrack(selectedTrack);
     if (!next?.button) return;
     selectTrack(next.track, next.button, true);
