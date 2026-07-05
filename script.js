@@ -1062,12 +1062,36 @@ const musicTracks = [
 
 const downloadedMusicTracks = [
   "美人山下的鐘擺.mp3",
+  "留給一朵花的時間.mp3",
   "金包里的回甘.mp3",
   "一葉一心.mp3",
   "百年土埆厝的茶湯.mp3",
   "土埆厝的燈火.mp3",
   "把汗水釀成歲月芬芳.mp3"
 ];
+
+const musicNarratives = {
+  "山腳下的蜜香": "從山腳、花開與蜂箱出發，把蜂農一年一年的守候唱成蜜香。這首歌適合放在翔勝養蜂的故事旁，讓人先聽見土地給出的甜。",
+  "美人山下的月桃花": "月桃花香牽回老屋、山風與童年記憶。歌曲的重點不是懷舊而已，而是把美人山下的家，慢慢唱成心裡可以回去的地方。",
+  "人生親像蜜香紅茶": "用蜜香紅茶比喻人生滋味：入口有甜，也有時間沉澱後的回甘。茶香裡藏著轉折、承擔與越走越穩的心境。",
+  "玉米田的約定": "玉米田象徵童年、家族與土地裡還在發芽的承諾。那些說過的話沒有消失，只是換成風裡的作物，繼續陪人長大。",
+  "醉蜂鬧山頭": "花期一到，蜂群與山頭一起熱鬧起來。這首歌帶著畫面感，把採蜜季節唱得輕快、明亮，也唱出蜂農靠天吃飯的節奏。",
+  "心才有地方曬太陽": "這首歌把家與土地寫成心可以曬太陽的地方。人在辛苦之後還能往前，是因為心裡仍留著一塊溫暖、透光的所在。",
+  "美人山下的風": "風從美人山吹過老屋，也把回家的路吹回心裡。歌曲的核心是故鄉不是遠方風景，而是每次想起都能安定人的方向。",
+  "願意拍手的人": "寫給一路願意鼓勵、支持與陪伴的人。掌聲不是熱鬧而已，而是在低潮時提醒人，還有人看見你的努力。",
+  "袂遮去我的天": "帶有台語語感，唱的是風雨過後仍然看得見天空。它適合放在人生低谷與重新站起來的段落，簡單但有力。",
+  "守望蜂鄉": "守一季花開，也守一家人的希望。歌曲把翔勝養蜂的核心唱出來：蜂蜜的甜，來自花，也來自人長時間的照顧。",
+  "金山土埆厝": "以金山、美人山與百年土埆厝為中心，唱出老屋站在山海之間的安定感。這是整個網站最重要的故鄉主題之一。",
+  "美人山腳下的炊煙": "炊煙慢慢升起，像有人在老家叫人回來吃飯。這首歌把家的味道寫得很具體，也把童年飯香留在旋律裡。",
+  "慢慢走，花會開": "給自己也給家人的溫柔提醒：不用急，日子會帶人到該去的地方。它是整組生命歌曲裡最安靜、也最能陪人的一首。",
+  "美人山下的鐘擺": "鐘擺像時間，也像人在故鄉與遠方之間來回。歌曲適合表達歲月推移、人生回望，以及最後仍回到美人山下的心情。",
+  "留給一朵花的時間": "這首歌提醒人把腳步放慢，給一朵花、也給自己一點時間。它把等待寫得不沉重，而是像花期一樣自然到來。",
+  "金包里的回甘": "以金包里與回甘作為意象，連起地方記憶、茶湯滋味與人生後勁。適合放在茶香與北海岸記憶之間。",
+  "一葉一心": "從一片茶葉、一份心意說起，唱出茶與待客的溫度。這首歌能承接茶行歲月，也讓品茗桌旁的記憶更完整。",
+  "百年土埆厝的茶湯": "把百年土埆厝與一碗茶湯放在一起，唱出老屋、茶香與家族記憶的交會。它有很強的主題代表性。",
+  "土埆厝的燈火": "燈火是家還在等人的信號。這首歌適合放在老屋修復後的段落，讓百年土埆厝不只是建築，也成為家族團聚的光。",
+  "把汗水釀成歲月芬芳": "把工程、田園與養蜂的辛苦都收進同一個意象：汗水最後會釀成芬芳。它是整組歌曲裡很適合作結尾的生命總結。"
+};
 
 const musicTrackTitles = new Set(musicTracks.map((track) => track.title));
 const addMusicTrack = (track) => {
@@ -1088,6 +1112,12 @@ downloadedMusicTracks.forEach((fileName) => {
     title,
     src: `assets/music/${fileName}`
   });
+});
+
+musicTracks.forEach((track) => {
+  if (musicNarratives[track.title]) {
+    track.lyrics = musicNarratives[track.title];
+  }
 });
 
 const oldHouseTimeline = [
@@ -1363,12 +1393,13 @@ function setupMusic() {
   const isGoogleDriveSource = (src = "") => /drive\.google\.com|drive\.usercontent\.google\.com/i.test(src);
   const isLocalAudioSource = (src = "") => Boolean(src) && !/^https?:\/\//i.test(src);
   const getMetaText = (track, extra = "") => [track.artist, track.story, extra].filter(Boolean).join("｜");
+  const playlistTracks = musicTracks.filter((track) => isLocalAudioSource(track.src));
 
   function findNextLocalTrack(track) {
-    const startIndex = Math.max(0, musicTracks.indexOf(track));
+    const startIndex = Math.max(0, playlistTracks.indexOf(track));
 
-    for (let offset = 1; offset <= musicTracks.length; offset += 1) {
-      const candidate = musicTracks[(startIndex + offset) % musicTracks.length];
+    for (let offset = 1; offset <= playlistTracks.length; offset += 1) {
+      const candidate = playlistTracks[(startIndex + offset) % playlistTracks.length];
       if (isLocalAudioSource(candidate.src)) {
         return {
           track: candidate,
@@ -1451,7 +1482,7 @@ function setupMusic() {
 
   playlist.innerHTML = "";
 
-  musicTracks.forEach((track, index) => {
+  playlistTracks.forEach((track, index) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "track-button";
@@ -1461,9 +1492,7 @@ function setupMusic() {
     buttonsByTrack.set(track, button);
   });
 
-  const firstPlayableTrack = musicTracks.find((track) => isLocalAudioSource(track.src))
-    || musicTracks.find((track) => track.src)
-    || musicTracks[0];
+  const firstPlayableTrack = playlistTracks[0];
 
   if (firstPlayableTrack) {
     selectTrack(firstPlayableTrack, buttonsByTrack.get(firstPlayableTrack), false);
