@@ -1647,7 +1647,7 @@ function setupSearch() {
   updateResults();
 }
 
-renderGallery("homeGallery", "all", 3);
+renderGallery("homeGallery", "all", 6);
 renderGallery("childhoodGallery", "childhood");
 renderGallery("engineeringGallery", "engineering");
 renderGallery("beekeepingGallery", "beekeeping");
