@@ -1,5 +1,25 @@
 const galleryItems = [
   {
+    title: "美人山下的綠意人家",
+    category: "home",
+    src: "assets/photos/web/shared-meiren-mountain-house.jpg",
+    date: "待補",
+    place: "美人山下",
+    gps: "待補",
+    song: "美人山下",
+    note: "青山、藍天與山腳下的人家連成一幅安靜的風景，適合放在分享照片區作為自然與家園的開場。"
+  },
+  {
+    title: "田園遠望與綠瓶小景",
+    category: "home",
+    src: "assets/photos/web/shared-field-view-green-bottle.jpg",
+    date: "待補",
+    place: "田園眺望處",
+    gps: "待補",
+    song: "自己的風景",
+    note: "從高處遠望田園、水池與山線，前景的綠瓶讓這張照片多了一點生活片刻的輕鬆感。"
+  },
+  {
     title: "2004 年修復前的荒廢庭院",
     category: "childhood",
     src: "assets/photos/web/old-house-before-2004-collapsed-courtyard.jpg",
