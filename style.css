@@ -191,6 +191,13 @@ img {
   box-shadow: 0 12px 28px rgba(45, 29, 19, 0.22);
 }
 
+.button.photo-share {
+  border-color: rgba(255, 255, 255, 0.78);
+  color: #fff9ec;
+  background: linear-gradient(180deg, rgba(111, 141, 76, 0.95), rgba(47, 96, 66, 0.95));
+  box-shadow: 0 12px 28px rgba(45, 29, 19, 0.22);
+}
+
 .section {
   width: min(1120px, calc(100% - 36px));
   margin: 0 auto;
