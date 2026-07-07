@@ -1,5 +1,35 @@
 const galleryItems = [
   {
+    title: "蝶豆花與土埆厝午後",
+    category: "home",
+    src: "assets/photos/web/shared-butterfly-pea-old-house.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "待補",
+    song: "土埆厝的燈火",
+    note: "竹篩裡盛著紫色蝶豆花，前方木桌、後方土埆厝與盆栽一起構成午後的農家生活畫面。"
+  },
+  {
+    title: "柚香與老屋庭院",
+    category: "home",
+    src: "assets/photos/web/shared-pomelo-old-house-courtyard.jpg",
+    date: "待補",
+    place: "金山美人山下土角厝",
+    gps: "待補",
+    song: "三餐四季",
+    note: "木桌上的柚子、庭院裡的紅色木輪車與土埆厝牆面，記錄收成與老屋日常。"
+  },
+  {
+    title: "雨後田園遠望",
+    category: "home",
+    src: "assets/photos/web/shared-field-water-view.jpg",
+    date: "待補",
+    place: "美人山下田園",
+    gps: "待補",
+    song: "美人山下的風",
+    note: "從山邊望向水田、聚落與遠山，雨後雲層讓田園景色更安靜，也保留了土地的開闊感。"
+  },
+  {
     title: "美人山下的綠意人家",
     category: "home",
     src: "assets/photos/web/shared-meiren-mountain-house.jpg",
