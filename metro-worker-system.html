@@ -132,6 +132,10 @@
     }
 
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       min-height: 40px;
       padding: 8px 13px;
       border: 1px solid var(--line);
@@ -146,6 +150,11 @@
       background: var(--teal);
       color: #fff;
       font-weight: 700;
+    }
+
+    .btn.primary .pen-icon {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
     }
 
     .btn.warning {
@@ -170,8 +179,8 @@
       overflow: hidden;
       border-radius: var(--radius);
       background:
-        linear-gradient(90deg, rgba(16, 35, 49, 0.88), rgba(16, 35, 49, 0.34)),
-        url("assets/photos/web/metro-steel-structure-01.jpg") center/cover;
+        linear-gradient(90deg, rgba(16, 35, 49, 0.9), rgba(16, 35, 49, 0.36)),
+        url("assets/photos/web/metro-steel-structure-02.jpg") right center / 170% auto no-repeat;
       box-shadow: var(--shadow);
     }
 
@@ -252,6 +261,29 @@
       margin: 0 0 14px;
       color: var(--blue);
       font-size: 1.25rem;
+    }
+
+    .form-panel h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-panel h2::before,
+    .btn .pen-icon {
+      display: inline-grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      background: #e7f4f1;
+      color: var(--teal);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .form-panel h2::before {
+      content: "✎";
     }
 
     .form-grid {
@@ -568,7 +600,7 @@
                 </div>
               </div>
               <div class="button-row">
-                <button class="btn primary" type="submit">儲存填報</button>
+                <button class="btn primary" type="submit"><span class="pen-icon">✎</span>填寫/儲存</button>
                 <button class="btn" type="button" id="resetBtn">清空表單</button>
                 <button class="btn warning" type="button" id="clearBtn">清除全部資料</button>
               </div>
