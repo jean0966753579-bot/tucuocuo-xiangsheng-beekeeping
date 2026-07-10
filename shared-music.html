@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分享好聽的音樂｜山海之間</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="shared-music">
+  <header class="site-header">
+    <a class="brand" href="index.html">山海之間</a>
+    <button class="nav-toggle" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="主要導覽">
+      <a href="index.html">首頁</a>
+      <a href="childhood.html">故鄉與土埆厝</a>
+      <a href="beekeeping.html">翔勝養蜂</a>
+      <a href="music.html">歌曲</a>
+      <a href="shared-music.html" aria-current="page">分享音樂</a>
+      <a href="stories.html">生命誌</a>
+      <a href="about.html">資料準備</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero compact">
+      <p class="eyebrow">分享好聽的音樂</p>
+      <h1>把想分享的 MP3 獨立放在這裡</h1>
+      <p>這裡是分享音樂專區，和原本的生命故事歌曲分開管理。上傳的新 MP3 會放在這份播放清單，方便直接點選播放。</p>
+    </section>
+
+    <section class="section music-layout">
+      <div class="music-player">
+        <p class="eyebrow">分享播放清單</p>
+        <h2 id="trackTitle">選擇一首歌曲</h2>
+        <p id="trackMeta">點選左側歌曲後，這裡會顯示歌曲說明。</p>
+        <audio id="audioPlayer" controls preload="metadata"></audio>
+        <div class="player-actions" aria-label="歌曲播放控制">
+          <button id="repeatToggle" class="player-action" type="button" aria-pressed="false">重複播放</button>
+          <button id="nextTrack" class="player-action" type="button">聽下一首歌</button>
+          <button id="autoPlayAll" class="player-action" type="button" aria-pressed="false">自動播放全部歌</button>
+        </div>
+        <div class="playlist" id="playlist"></div>
+      </div>
+      <article class="lyrics-panel">
+        <p class="eyebrow">分享說明</p>
+        <h2 id="lyricsTitle">歌曲備註</h2>
+        <div id="lyricsText" class="lyrics-text"></div>
+      </article>
+    </section>
+
+    <section class="section guide-panel">
+      <h2>分享音樂整理方式</h2>
+      <p>這個頁面專門放「分享好聽的音樂」MP3；原本的「聽生命歌曲」仍保留生命故事歌曲，不會混在同一份播放清單。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> 山海之間</p>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="返回頂端">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

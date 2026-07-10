@@ -1180,6 +1180,58 @@ musicTracks.forEach((track) => {
   }
 });
 
+const sharedMusicTracks = [
+  {
+    title: "一葉一心",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/一葉一心.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "一葉一心\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  },
+  {
+    title: "一襟清夢",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/一襟清夢.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "一襟清夢\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  },
+  {
+    title: "人生親像蜜香紅茶",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/人生親像蜜香紅茶.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "人生親像蜜香紅茶\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  },
+  {
+    title: "山風捎來的甘甜",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/山風捎來的甘甜.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "山風捎來的甘甜\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  },
+  {
+    title: "美人山下的月桃花 (1)",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/美人山下的月桃花 (1).mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "美人山下的月桃花 (1)\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  },
+  {
+    title: "播田花開時",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/播田花開時.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "播田花開時\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  },
+  {
+    title: "醉蜂鬧山頭",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/醉蜂鬧山頭.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: "醉蜂鬧山頭\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+  }
+];
+
 const oldHouseTimeline = [
   { year: "1910", title: "簡家土角厝落成", text: "老屋建於一九一〇年，原本是傳統一條龍格局，見證金山美人山下百年農村歲月。" },
   { year: "增建", title: "家族人口增加，左右護龍陸續形成", text: "隨著家族人口增加，老屋陸續增建左右護龍，只可惜左側廂房後來年久崩壞。" },
@@ -1457,7 +1509,8 @@ function setupMusic() {
   const isGoogleDriveSource = (src = "") => /drive\.google\.com|drive\.usercontent\.google\.com/i.test(src);
   const isLocalAudioSource = (src = "") => Boolean(src) && !/^https?:\/\//i.test(src);
   const getMetaText = (track, extra = "") => [track.artist, track.story, extra].filter(Boolean).join("｜");
-  const playlistTracks = musicTracks.filter((track) => isLocalAudioSource(track.src));
+  const sourceTracks = page === "shared-music" ? sharedMusicTracks : musicTracks;
+  const playlistTracks = sourceTracks.filter((track) => isLocalAudioSource(track.src));
 
   function getNextTrack(track) {
     if (!playlistTracks.length) return null;
@@ -1666,6 +1719,6 @@ renderTimeline("engineeringTimeline", engineeringTimeline);
 renderFlowerCalendar();
 setupSearch();
 
-if (page === "music") {
+if (page === "music" || page === "shared-music") {
   setupMusic();
 }
