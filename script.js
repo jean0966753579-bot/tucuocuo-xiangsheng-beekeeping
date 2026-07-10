@@ -1186,49 +1186,77 @@ const sharedMusicTracks = [
     artist: "分享好聽的音樂",
     src: "assets/music/shared/一葉一心.mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "一葉一心\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `一葉一心
+
+歌詞小段
+一葉一心，慢慢等茶香醒來
+一盞清湯，照見人情的溫柔`
   },
   {
     title: "一襟清夢",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/一襟清夢.mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "一襟清夢\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `一襟清夢
+
+歌詞小段
+把一襟清夢收在晚風裡
+走過山路，心還記得回家的方向`
   },
   {
     title: "人生親像蜜香紅茶",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/人生親像蜜香紅茶.mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "人生親像蜜香紅茶\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `人生親像蜜香紅茶
+
+歌詞小段
+入口有甜，也有慢慢回來的香
+一杯茶，一段路，一個人慢慢走出的故事`
   },
   {
     title: "山風捎來的甘甜",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/山風捎來的甘甜.mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "山風捎來的甘甜\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `山風捎來的甘甜
+
+歌詞小段
+山風捎來一點甘甜
+像花開過後，蜂箱裡慢慢亮起的金黃`
   },
   {
     title: "美人山下的月桃花 (1)",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/美人山下的月桃花 (1).mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "美人山下的月桃花 (1)\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `美人山下的月桃花
+
+歌詞小段
+把舊時光輕輕牽回來
+風從山邊走過，也把家的聲音帶來`
   },
   {
     title: "播田花開時",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/播田花開時.mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "播田花開時\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `播田花開時
+
+歌詞小段
+播田花開時，風也放慢腳步
+泥土裡的盼望，一季一季長成日子`
   },
   {
     title: "醉蜂鬧山頭",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/醉蜂鬧山頭.mp3",
     story: "分享音樂專區 MP3。",
-    lyrics: "醉蜂鬧山頭\n\n這首歌已加入「分享好聽的音樂」播放清單。"
+    lyrics: `醉蜂鬧山頭
+
+歌詞小段
+花開的時候
+整座山都醒來`
   }
 ];
 
