@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="簡之文玩收藏：玉石與文玩收藏的個人線上展櫃。">
+  <title>簡之文玩收藏</title>
+  <link rel="stylesheet" href="collection.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="collection.html" aria-label="簡之文玩收藏首頁">
+      <span class="seal">簡</span><span>簡之文玩收藏</span>
+    </a>
+    <a class="home-button" href="collection.html">回首頁</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">JIAN'S CURIO CABINET</p>
+      <h1>一器一物，<br>皆有可細看的光。</h1>
+      <p class="intro">這裡記錄個人珍藏的形、色與故事。所有年代、材質及價格資訊皆為個人整理，僅供收藏交流參考。</p>
+      <a class="hero-link" href="#collectionList">瀏覽收藏 <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="collection-section" id="collectionList" aria-labelledby="collectionTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2 id="collectionTitle">藏品一覽</h2></div>
+        <label class="search"><span>搜尋</span><input id="collectionSearch" type="search" placeholder="輸入編號、名稱或材質"></label>
+      </div>
+      <p id="resultCount" class="result-count" aria-live="polite"></p>
+      <div id="collectionGrid" class="collection-grid"></div>
+    </section>
+  </main>
+
+  <footer><span>簡之文玩收藏</span><small>收藏資料與參考價格僅供交流參考</small></footer>
+
+  <div id="detailModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="detail" role="dialog" aria-modal="true" aria-labelledby="detailName">
+      <div class="detail-topbar"><a href="collection.html" class="modal-home">回首頁</a><button class="close" type="button" data-close aria-label="關閉藏品詳細資料">×</button></div>
+      <div class="viewer">
+        <img id="detailImage" alt="">
+        <button id="prevPhoto" class="photo-nav prev" type="button" aria-label="上一張照片">‹</button>
+        <button id="nextPhoto" class="photo-nav next" type="button" aria-label="下一張照片">›</button>
+        <span id="photoCount" class="photo-count"></span>
+      </div>
+      <div class="detail-copy">
+        <p id="detailNumber" class="item-number"></p><h2 id="detailName"></h2>
+        <dl><div><dt>品項</dt><dd id="detailMaterial"></dd></div><div><dt>尺寸</dt><dd id="detailSize"></dd></div><div><dt>重量</dt><dd id="detailWeight"></dd></div><div><dt>參考價格</dt><dd id="detailPrice"></dd></div></dl>
+        <p id="detailDescription" class="description"></p>
+        <p class="notice">※ 年代、材質與價格為個人蒐集整理，僅供參考，不代表專業鑑定或實際交易價值。</p>
+      </div>
+    </article>
+  </div>
+  <script src="collection.js"></script>
+</body>
+</html>
