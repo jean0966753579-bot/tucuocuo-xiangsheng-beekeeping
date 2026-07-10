@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>捷運工程僱用移工管理填報系統</title>
+  <style>
+    :root {
+      --ink: #222831;
+      --muted: #65717f;
+      --line: #d9e0e7;
+      --paper: #ffffff;
+      --soft: #f5f7f9;
+      --blue: #22577a;
+      --teal: #2f8f83;
+      --gold: #c58a22;
+      --red: #b34242;
+      --green: #2f7d4f;
+      --shadow: 0 18px 44px rgba(26, 40, 52, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--soft);
+      font-family: "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding: 22px;
+      color: #f8fbfd;
+      background:
+        linear-gradient(180deg, rgba(34, 87, 122, 0.94), rgba(28, 58, 78, 0.96)),
+        url("assets/photos/web/metro-tunnel-track.jpg") center/cover;
+    }
+
+    .brand {
+      display: grid;
+      gap: 6px;
+    }
+
+    .brand strong {
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .brand span,
+    .nav-note {
+      color: rgba(248, 251, 253, 0.78);
+      font-size: 0.9rem;
+    }
+
+    .nav-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-list a:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .nav-note {
+      margin-top: auto;
+    }
+
+    .main {
+      min-width: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px clamp(16px, 4vw, 34px);
+      background: rgba(245, 247, 249, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar h1 {
+      margin: 0;
+      color: var(--blue);
+      font-size: clamp(1.2rem, 2.3vw, 1.7rem);
+      line-height: 1.25;
+    }
+
+    .topbar-actions,
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      min-height: 40px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      border-color: var(--teal);
+      background: var(--teal);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .btn.warning {
+      border-color: rgba(179, 66, 66, 0.3);
+      color: var(--red);
+    }
+
+    .btn:hover {
+      box-shadow: 0 8px 18px rgba(26, 40, 52, 0.11);
+    }
+
+    .content {
+      width: min(1320px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 24px 0 54px;
+    }
+
+    .hero {
+      min-height: 260px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(90deg, rgba(16, 35, 49, 0.88), rgba(16, 35, 49, 0.34)),
+        url("assets/photos/web/metro-steel-structure-01.jpg") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      padding: clamp(24px, 4vw, 42px);
+      color: #fff;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #ffd27c;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .hero h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1.18;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .stat-card,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card {
+      padding: 16px;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-top: 6px;
+      color: var(--blue);
+      font-size: 1.9rem;
+      line-height: 1.1;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 18px;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 1.25rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 5px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea,
+    .filter-bar input,
+    .filter-bar select {
+      width: 100%;
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .field textarea {
+      min-height: 76px;
+      resize: vertical;
+    }
+
+    .analysis-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .analysis-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: var(--radius);
+      background: #f8fafb;
+      border: 1px solid var(--line);
+    }
+
+    .analysis-row strong {
+      color: var(--blue);
+    }
+
+    .bar {
+      height: 8px;
+      margin-top: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #dfe7ee;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .filter-bar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 180px 180px auto;
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 12px;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      background: var(--paper);
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #edf3f7;
+      color: var(--blue);
+      font-size: 0.88rem;
+    }
+
+    td.address {
+      min-width: 240px;
+      white-space: normal;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: #e7f4f1;
+      color: var(--teal);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .row-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .row-actions .btn {
+      min-height: 32px;
+      padding: 5px 9px;
+      font-size: 0.86rem;
+    }
+
+    .notice {
+      margin-top: 12px;
+      padding: 12px;
+      border-left: 4px solid var(--gold);
+      background: #fff7e7;
+      color: #73511d;
+    }
+
+    .empty {
+      padding: 22px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .app-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+      }
+
+      .nav-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stats-grid,
+      .grid-two,
+      .form-grid,
+      .filter-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .sidebar,
+      .topbar,
+      .form-panel,
+      .filter-bar,
+      .row-actions {
+        display: none;
+      }
+
+      .app-shell {
+        display: block;
+      }
+
+      .content {
+        width: 100%;
+      }
+
+      .panel,
+      .stat-card,
+      .hero {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>捷運工程僱用移工管理填報系統</strong>
+        <span>依「移工人數統計表」欄位建立的前端填報工具</span>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#dashboard">總覽</a></li>
+        <li><a href="#entry">新增填報</a></li>
+        <li><a href="#records">資料清冊</a></li>
+      </ul>
+      <p class="nav-note">資料會先儲存在此瀏覽器。匯出 CSV 後可交由試算表開啟與彙整。</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1>捷運工程僱用移工管理填報系統</h1>
+        <div class="topbar-actions">
+          <button class="btn" type="button" id="printBtn">列印</button>
+          <button class="btn" type="button" id="exportBtn">匯出 CSV</button>
+          <button class="btn primary" type="button" id="sampleBtn">載入範例</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="hero" id="dashboard">
+          <div class="hero-content">
+            <p class="eyebrow">MRT WORKFORCE REPORTING</p>
+            <h2>工程處、區段標、廠商與國籍人數一次填報</h2>
+            <p>表單欄位對應 Excel 範本：工程處、區段標、廠商名稱、泰國、印尼、菲律賓、越南、施工人數與宿舍地址，並延伸加入工程線別分析。</p>
+          </div>
+        </section>
+
+        <section class="section stats-grid" aria-label="統計總覽">
+          <article class="stat-card">
+            <span>施工人數</span>
+            <strong id="totalWorkers">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>泰國</span>
+            <strong id="totalThai">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>印尼</span>
+            <strong id="totalIndonesian">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>菲律賓</span>
+            <strong id="totalFilipino">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>越南</span>
+            <strong id="totalVietnamese">0</strong>
+          </article>
+        </section>
+
+        <section class="section grid-two" id="entry">
+          <article class="panel form-panel">
+            <h2>填報資料</h2>
+            <form id="workerForm">
+              <input type="hidden" id="recordId">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="office">工程處</label>
+                  <select id="office" required>
+                    <option value="第一區工程處">第一區工程處</option>
+                    <option value="第二區工程處">第二區工程處</option>
+                    <option value="機電系統工程處">機電系統工程處</option>
+                    <option value="土木建築工程處">土木建築工程處</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="lineName">工程線別</label>
+                  <select id="lineName" required>
+                    <option value="萬大線">萬大線</option>
+                    <option value="信義線東延段">信義線東延段</option>
+                    <option value="環狀線">環狀線</option>
+                    <option value="捷運含代辦工程">捷運含代辦工程</option>
+                    <option value="浩然敬老院重建工程">浩然敬老院重建工程</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="sectionName">區段標</label>
+                  <input id="sectionName" placeholder="例：CQ860A" required>
+                </div>
+                <div class="field">
+                  <label for="vendor">廠商名稱</label>
+                  <input id="vendor" placeholder="例：承攬廠商" required>
+                </div>
+                <div class="field">
+                  <label for="thai">國籍：泰國</label>
+                  <input id="thai" type="number" min="0" value="0">
+                </div>
+                <div class="field">
+                  <label for="indonesian">國籍：印尼</label>
+                  <input id="indonesian" type="number" min="0" value="0">
+                </div>
+                <div class="field">
+                  <label for="filipino">國籍：菲律賓</label>
+                  <input id="filipino" type="number" min="0" value="0">
+                </div>
+                <div class="field">
+                  <label for="vietnamese">國籍：越南</label>
+                  <input id="vietnamese" type="number" min="0" value="0">
+                </div>
+                <div class="field full">
+                  <label for="address">宿舍地址</label>
+                  <textarea id="address" placeholder="請填寫宿舍地址或多處宿舍備註"></textarea>
+                </div>
+              </div>
+              <div class="button-row">
+                <button class="btn primary" type="submit">儲存填報</button>
+                <button class="btn" type="button" id="resetBtn">清空表單</button>
+                <button class="btn warning" type="button" id="clearBtn">清除全部資料</button>
+              </div>
+            </form>
+            <div class="notice" id="formNotice">施工人數會由四個國籍欄位自動加總。</div>
+          </article>
+
+          <article class="panel">
+            <h2>工程線別人數分析</h2>
+            <div class="analysis-list" id="lineAnalysis"></div>
+          </article>
+        </section>
+
+        <section class="section panel" id="records">
+          <h2>資料清冊</h2>
+          <div class="filter-bar">
+            <div class="field">
+              <label for="searchInput">搜尋</label>
+              <input id="searchInput" placeholder="工程處、區段標、廠商、地址">
+            </div>
+            <div class="field">
+              <label for="officeFilter">工程處</label>
+              <select id="officeFilter">
+                <option value="">全部</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="lineFilter">工程線別</label>
+              <select id="lineFilter">
+                <option value="">全部</option>
+              </select>
+            </div>
+            <button class="btn" type="button" id="resetFilterBtn">重設篩選</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>工程處</th>
+                  <th>工程線別</th>
+                  <th>區段標</th>
+                  <th>廠商名稱</th>
+                  <th>泰國</th>
+                  <th>印尼</th>
+                  <th>菲律賓</th>
+                  <th>越南</th>
+                  <th>施工人數</th>
+                  <th>宿舍地址</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="recordsBody"></tbody>
+            </table>
+          </div>
+          <div class="empty" id="emptyState">尚無資料，請先新增填報或載入範例。</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const storageKey = "metro-worker-records-v1";
+    const fields = [
+      "office",
+      "lineName",
+      "sectionName",
+      "vendor",
+      "thai",
+      "indonesian",
+      "filipino",
+      "vietnamese",
+      "address"
+    ];
+    const lineOrder = ["捷運含代辦工程", "萬大線", "信義線東延段", "環狀線", "浩然敬老院重建工程"];
+    let records = loadRecords();
+
+    const form = document.querySelector("#workerForm");
+    const recordsBody = document.querySelector("#recordsBody");
+    const emptyState = document.querySelector("#emptyState");
+    const searchInput = document.querySelector("#searchInput");
+    const officeFilter = document.querySelector("#officeFilter");
+    const lineFilter = document.querySelector("#lineFilter");
+
+    const sampleRecords = [
+      {
+        id: crypto.randomUUID(),
+        office: "第一區工程處",
+        lineName: "萬大線",
+        sectionName: "CQ850",
+        vendor: "大眾捷運土建聯合承攬",
+        thai: 8,
+        indonesian: 4,
+        filipino: 2,
+        vietnamese: 11,
+        address: "新北市中和區工程宿舍"
+      },
+      {
+        id: crypto.randomUUID(),
+        office: "第二區工程處",
+        lineName: "信義線東延段",
+        sectionName: "CR580A",
+        vendor: "信東營造股份有限公司",
+        thai: 3,
+        indonesian: 6,
+        filipino: 1,
+        vietnamese: 9,
+        address: "臺北市信義區施工宿舍"
+      },
+      {
+        id: crypto.randomUUID(),
+        office: "機電系統工程處",
+        lineName: "環狀線",
+        sectionName: "CF670",
+        vendor: "環線機電工程團隊",
+        thai: 2,
+        indonesian: 5,
+        filipino: 6,
+        vietnamese: 7,
+        address: "新北市板橋區臨時宿舍"
+      }
+    ];
+
+    function loadRecords() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveRecords() {
+      localStorage.setItem(storageKey, JSON.stringify(records));
+    }
+
+    function numberValue(id) {
+      const value = Number(document.querySelector(`#${id}`).value);
+      return Number.isFinite(value) && value > 0 ? value : 0;
+    }
+
+    function workerTotal(record) {
+      return Number(record.thai) + Number(record.indonesian) + Number(record.filipino) + Number(record.vietnamese);
+    }
+
+    function collectForm() {
+      return {
+        id: document.querySelector("#recordId").value || crypto.randomUUID(),
+        office: document.querySelector("#office").value.trim(),
+        lineName: document.querySelector("#lineName").value.trim(),
+        sectionName: document.querySelector("#sectionName").value.trim(),
+        vendor: document.querySelector("#vendor").value.trim(),
+        thai: numberValue("thai"),
+        indonesian: numberValue("indonesian"),
+        filipino: numberValue("filipino"),
+        vietnamese: numberValue("vietnamese"),
+        address: document.querySelector("#address").value.trim()
+      };
+    }
+
+    function resetForm() {
+      form.reset();
+      document.querySelector("#recordId").value = "";
+      ["thai", "indonesian", "filipino", "vietnamese"].forEach((id) => {
+        document.querySelector(`#${id}`).value = 0;
+      });
+      document.querySelector("#formNotice").textContent = "施工人數會由四個國籍欄位自動加總。";
+    }
+
+    function upsertRecord(record) {
+      const index = records.findIndex((item) => item.id === record.id);
+      if (index >= 0) {
+        records[index] = record;
+      } else {
+        records.push(record);
+      }
+      saveRecords();
+      render();
+      resetForm();
+    }
+
+    function editRecord(id) {
+      const record = records.find((item) => item.id === id);
+      if (!record) return;
+      document.querySelector("#recordId").value = record.id;
+      fields.forEach((field) => {
+        document.querySelector(`#${field}`).value = record[field] ?? "";
+      });
+      document.querySelector("#formNotice").textContent = `正在編輯 ${record.sectionName}，施工人數 ${workerTotal(record)} 人。`;
+      document.querySelector("#entry").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function deleteRecord(id) {
+      records = records.filter((item) => item.id !== id);
+      saveRecords();
+      render();
+    }
+
+    function filteredRecords() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      const office = officeFilter.value;
+      const line = lineFilter.value;
+      return records.filter((record) => {
+        const text = [record.office, record.lineName, record.sectionName, record.vendor, record.address].join(" ").toLowerCase();
+        return (!keyword || text.includes(keyword)) && (!office || record.office === office) && (!line || record.lineName === line);
+      });
+    }
+
+    function renderStats() {
+      const totals = records.reduce((sum, record) => {
+        sum.thai += Number(record.thai);
+        sum.indonesian += Number(record.indonesian);
+        sum.filipino += Number(record.filipino);
+        sum.vietnamese += Number(record.vietnamese);
+        sum.workers += workerTotal(record);
+        return sum;
+      }, { workers: 0, thai: 0, indonesian: 0, filipino: 0, vietnamese: 0 });
+
+      document.querySelector("#totalWorkers").textContent = totals.workers;
+      document.querySelector("#totalThai").textContent = totals.thai;
+      document.querySelector("#totalIndonesian").textContent = totals.indonesian;
+      document.querySelector("#totalFilipino").textContent = totals.filipino;
+      document.querySelector("#totalVietnamese").textContent = totals.vietnamese;
+    }
+
+    function renderAnalysis() {
+      const totalsByLine = new Map(lineOrder.map((line) => [line, 0]));
+      records.forEach((record) => {
+        totalsByLine.set(record.lineName, (totalsByLine.get(record.lineName) || 0) + workerTotal(record));
+      });
+      const max = Math.max(...totalsByLine.values(), 1);
+      document.querySelector("#lineAnalysis").innerHTML = [...totalsByLine.entries()].map(([line, total]) => `
+        <div class="analysis-row">
+          <div>
+            <strong>${line}</strong>
+            <div class="bar"><span style="width: ${Math.round((total / max) * 100)}%"></span></div>
+          </div>
+          <span class="pill">${total} 人</span>
+        </div>
+      `).join("");
+    }
+
+    function renderFilters() {
+      const offices = [...new Set(records.map((record) => record.office))].sort();
+      const lines = [...new Set([...lineOrder, ...records.map((record) => record.lineName)])];
+      const officeValue = officeFilter.value;
+      const lineValue = lineFilter.value;
+      officeFilter.innerHTML = `<option value="">全部</option>${offices.map((office) => `<option value="${office}">${office}</option>`).join("")}`;
+      lineFilter.innerHTML = `<option value="">全部</option>${lines.map((line) => `<option value="${line}">${line}</option>`).join("")}`;
+      officeFilter.value = officeValue;
+      lineFilter.value = lineValue;
+    }
+
+    function renderTable() {
+      const rows = filteredRecords();
+      emptyState.style.display = records.length ? "none" : "block";
+      recordsBody.innerHTML = rows.map((record) => `
+        <tr>
+          <td>${record.office}</td>
+          <td>${record.lineName}</td>
+          <td>${record.sectionName}</td>
+          <td>${record.vendor}</td>
+          <td>${record.thai}</td>
+          <td>${record.indonesian}</td>
+          <td>${record.filipino}</td>
+          <td>${record.vietnamese}</td>
+          <td><span class="pill">${workerTotal(record)}</span></td>
+          <td class="address">${record.address || "未填"}</td>
+          <td>
+            <div class="row-actions">
+              <button class="btn" type="button" data-edit="${record.id}">編輯</button>
+              <button class="btn warning" type="button" data-delete="${record.id}">刪除</button>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function render() {
+      renderStats();
+      renderAnalysis();
+      renderFilters();
+      renderTable();
+    }
+
+    function exportCsv() {
+      const header = ["工程處", "工程線別", "區段標", "廠商名稱", "國籍泰國", "國籍印尼", "國籍菲律賓", "國籍越南", "施工人數", "宿舍地址"];
+      const body = records.map((record) => [
+        record.office,
+        record.lineName,
+        record.sectionName,
+        record.vendor,
+        record.thai,
+        record.indonesian,
+        record.filipino,
+        record.vietnamese,
+        workerTotal(record),
+        record.address
+      ]);
+      const csv = [header, ...body].map((row) => row.map((cell) => `"${String(cell ?? "").replaceAll('"', '""')}"`).join(",")).join("\n");
+      const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `捷運工程僱用移工人數統計表-${new Date().toISOString().slice(0, 10)}.csv`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const record = collectForm();
+      if (workerTotal(record) === 0) {
+        document.querySelector("#formNotice").textContent = "請至少填寫一個國籍人數。";
+        return;
+      }
+      upsertRecord(record);
+    });
+
+    document.querySelector("#resetBtn").addEventListener("click", resetForm);
+    document.querySelector("#printBtn").addEventListener("click", () => window.print());
+    document.querySelector("#exportBtn").addEventListener("click", exportCsv);
+    document.querySelector("#sampleBtn").addEventListener("click", () => {
+      records = sampleRecords.map((record) => ({ ...record, id: crypto.randomUUID() }));
+      saveRecords();
+      render();
+    });
+    document.querySelector("#clearBtn").addEventListener("click", () => {
+      if (!confirm("確定要清除全部填報資料？")) return;
+      records = [];
+      saveRecords();
+      render();
+      resetForm();
+    });
+    document.querySelector("#resetFilterBtn").addEventListener("click", () => {
+      searchInput.value = "";
+      officeFilter.value = "";
+      lineFilter.value = "";
+      renderTable();
+    });
+    recordsBody.addEventListener("click", (event) => {
+      const editId = event.target.dataset.edit;
+      const deleteId = event.target.dataset.delete;
+      if (editId) editRecord(editId);
+      if (deleteId) deleteRecord(deleteId);
+    });
+    searchInput.addEventListener("input", renderTable);
+    officeFilter.addEventListener("change", renderTable);
+    lineFilter.addEventListener("change", renderTable);
+    ["thai", "indonesian", "filipino", "vietnamese"].forEach((id) => {
+      document.querySelector(`#${id}`).addEventListener("input", () => {
+        const total = ["thai", "indonesian", "filipino", "vietnamese"].reduce((sum, key) => sum + numberValue(key), 0);
+        document.querySelector("#formNotice").textContent = `目前施工人數加總：${total} 人。`;
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
