@@ -1182,6 +1182,50 @@ musicTracks.forEach((track) => {
 
 const sharedMusicTracks = [
   {
+    title: "讓花歸花，讓草歸草",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/讓花歸花_讓草歸草.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `讓花歸花，讓草歸草
+
+歌詞小段
+讓花歸花，讓草歸草
+把心裡放不下的事，慢慢交還給風`
+  },
+  {
+    title: "這一站，沒白來",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/這一站，沒白來.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `這一站，沒白來
+
+歌詞小段
+這一站，沒白來
+走過的路，都在心裡留下答案`
+  },
+  {
+    title: "把歲月種成了花",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/把歲月種成了花.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `把歲月種成了花
+
+歌詞小段
+把歲月種成了花
+有些等待，終於在風裡開成溫柔`
+  },
+  {
+    title: "窗前那位房客",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/窗前那位房客.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `窗前那位房客
+
+歌詞小段
+窗前那位房客，靜靜看著天色
+把一段心事，留給夜晚慢慢聽`
+  },
+  {
     title: "一葉一心",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/一葉一心.mp3",
