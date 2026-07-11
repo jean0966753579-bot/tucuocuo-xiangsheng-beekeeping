@@ -1182,6 +1182,28 @@ musicTracks.forEach((track) => {
 
 const sharedMusicTracks = [
   {
+    title: "種進心裡的春天",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/種進心裡的春天.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `種進心裡的春天
+
+歌詞小段
+把一粒希望種進心裡
+等風一吹，春天就慢慢醒來`
+  },
+  {
+    title: "把日子過成風景",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/把日子過成風景.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `把日子過成風景
+
+歌詞小段
+把日子過成風景
+平凡的路，也有值得回頭看的光`
+  },
+  {
     title: "讓花歸花，讓草歸草",
     artist: "分享好聽的音樂",
     src: "assets/music/shared/讓花歸花_讓草歸草.mp3",
