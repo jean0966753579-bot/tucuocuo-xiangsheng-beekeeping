@@ -26,6 +26,13 @@ const shares = [
     description: "以微距鏡頭記錄彌勒玉件的雕工、玉質、皮色與自然紋理。",
     folder: "maitreya-jade",
     count: 5
+  },
+  {
+    id: "S05",
+    name: "青花玉鳥巧雕微距攝影",
+    description: "以多角度微距影像記錄青花玉件的鳥紋巧雕、深淺墨色與線條細節。",
+    folder: "ink-jade-bird",
+    count: 10
   }
 ].map((item) => ({
   ...item,
