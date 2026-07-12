@@ -19,6 +19,13 @@ const shares = [
     description: "逐顆記錄隨形玉珠的皮色、質地、天然紋理與表面光感。",
     folder: "seed-jade-bracelet",
     count: 20
+  },
+  {
+    id: "S04",
+    name: "彌勒玉件微距攝影",
+    description: "以微距鏡頭記錄彌勒玉件的雕工、玉質、皮色與自然紋理。",
+    folder: "maitreya-jade",
+    count: 5
   }
 ].map((item) => ({
   ...item,
@@ -34,7 +41,7 @@ let activePhoto = 0;
 let lastFocused = null;
 
 function renderShares() {
-  document.querySelector("#shareCount").textContent = `共 ${shares.length} 組影像分享`;
+  document.querySelector("#shareCount").textContent = `共 ${shares.length} 組收藏影像`;
   grid.innerHTML = shares.map((item) => `
     <article class="collection-card share-card">
       <button class="card-open" type="button" data-id="${item.id}" aria-label="瀏覽${item.name}全部照片">
