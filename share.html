@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="簡之文玩收藏影像分享：微距與特寫攝影紀錄。">
+  <title>影像分享｜簡之文玩收藏</title>
+  <link rel="stylesheet" href="collection.css">
+  <link rel="stylesheet" href="share.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="collection.html" aria-label="簡之文玩收藏首頁">
+      <span class="seal">簡</span><span>簡之文玩收藏</span>
+    </a>
+    <div class="header-actions">
+      <a class="main-site-button" href="index.html">回山海之間</a>
+      <a class="home-button" href="collection.html">回收藏首頁</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="share-hero">
+      <p class="eyebrow">MACRO PHOTOGRAPHY</p>
+      <h1>影像分享</h1>
+      <p>用微距與特寫鏡頭，記錄玉質、皮色、紋理與雕工。點選縮圖，即可逐張欣賞完整照片。</p>
+    </section>
+    <section class="collection-section" aria-labelledby="shareTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">PHOTO STORIES</p><h2 id="shareTitle">微距特寫</h2></div>
+      </div>
+      <p id="shareCount" class="result-count" aria-live="polite"></p>
+      <div id="shareGrid" class="collection-grid share-grid"></div>
+    </section>
+  </main>
+
+  <footer><span>簡之文玩收藏・影像分享</span><small>攝影作品僅供欣賞與交流</small></footer>
+
+  <div id="shareModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="share-detail" role="dialog" aria-modal="true" aria-labelledby="shareName">
+      <div class="detail-topbar"><a href="share.html" class="modal-home">回影像分享</a><button class="close" type="button" data-close aria-label="關閉照片瀏覽">×</button></div>
+      <div class="share-viewer">
+        <img id="shareImage" alt="">
+        <button id="prevShare" class="photo-nav prev" type="button" aria-label="上一張照片">‹</button>
+        <button id="nextShare" class="photo-nav next" type="button" aria-label="下一張照片">›</button>
+        <span id="sharePhotoCount" class="photo-count"></span>
+      </div>
+      <div class="share-copy">
+        <p class="eyebrow">MACRO DETAILS</p>
+        <h2 id="shareName"></h2>
+        <p id="shareDescription"></p>
+        <div id="shareThumbs" class="share-thumbs" aria-label="照片縮圖列表"></div>
+      </div>
+    </article>
+  </div>
+  <script src="share.js"></script>
+</body>
+</html>
