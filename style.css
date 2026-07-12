@@ -142,6 +142,55 @@ img {
   font-size: clamp(1.05rem, 2vw, 1.3rem);
 }
 
+.hero-content .life-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  width: fit-content;
+  margin: 0 0 22px;
+  padding: 9px 16px 9px 18px;
+  border: 1px solid rgba(255, 241, 207, 0.28);
+  border-left: 2px solid var(--honey);
+  background: linear-gradient(90deg, rgba(45, 29, 19, 0.58), rgba(45, 29, 19, 0.25));
+  box-shadow: 0 8px 30px rgba(20, 12, 7, 0.18);
+  backdrop-filter: blur(7px);
+  font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: clamp(0.84rem, 1.5vw, 0.98rem);
+  letter-spacing: 0.08em;
+}
+
+.life-note i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--honey);
+  box-shadow: 0 0 8px rgba(215, 154, 43, 0.7);
+}
+
+.hero-story {
+  max-width: 720px;
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 241, 207, 0.28);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .hero-story p {
+  max-width: 700px;
+  font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+  line-height: 1.95;
+  letter-spacing: 0.025em;
+}
+
+.hero-content .hero-intro {
+  margin: 0 0 12px;
+}
+
+.hero-content .hero-origin {
+  margin: 0;
+  color: rgba(255, 249, 236, 0.84);
+}
+
 .eyebrow {
   margin: 0 0 8px;
   color: var(--honey);
