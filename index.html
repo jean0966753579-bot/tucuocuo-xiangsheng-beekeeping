@@ -7,7 +7,7 @@
   <meta name="description" content="從金山美人山下的百年土埆厝，到翔勝養蜂、茶行歲月與捷運工程人生，整理一家人與土地同行的生命故事。">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="home">
+<body data-page="home" data-season="spring">
   <header class="site-header">
     <a class="brand" href="index.html">山海之間</a>
     <button class="nav-toggle" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
@@ -23,16 +23,17 @@
   </header>
 
   <main>
-    <section class="hero">
-      <img src="assets/photos/web/old-house-restored-front-wide.jpg" alt="金山美人山下修復後的百年土埆厝">
+    <section class="hero seasonal-hero">
+      <img id="seasonHeroImage" src="assets/photos/web/shared-butterfly-pea-old-house.jpg" alt="春季土埆厝庭院裡的蝶豆花與午後光影">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="eyebrow">北海鄉情．百年土埆厝的重生</p>
-        <h1>山海之間，留一條回家的路</h1>
+        <p class="eyebrow" id="seasonEyebrow">春回美人山．土埆厝醒來</p>
+        <h1 id="seasonTitle">春天的老屋，把土地重新喚醒</h1>
+        <p class="season-note" id="seasonNote">目前首頁季節：春。之後只要調整 script.js 的 activeSeason，就能切換夏、秋、冬封面與色彩。</p>
         <p class="life-note"><span>佃農之子</span><i aria-hidden="true"></i><span>捷運工程三十五年</span><i aria-hidden="true"></i><span>回望故鄉</span></p>
         <div class="hero-story">
-          <p class="hero-intro">從田埂走進城市，把三十五年的歲月交給捷運工程；也因成為苗栗山城老蜂農的大女婿，年輕時便跟著丈人追花採蜜。半輩子是工程師，假日追蜂尋蜜，在工地與山野之間，走出一段斜槓人生。</p>
-          <p class="hero-origin">走過半生才明白，路修得再遠，心裡最深的方向，始終朝著土地。於是寫下老屋、農事、蜂香與一路走來的人情——讓照片替歲月留影，讓文字與歌守住記憶，也為後來的人，留一盞回家的燈。</p>
+          <p class="hero-intro" id="seasonLeadOne">蝶豆花在竹篩裡亮起紫色，庭院的盆栽、木桌與土埆牆一起接住午後的光。春天不是突然來的，是老屋一點一點醒來的聲音。</p>
+          <p class="hero-origin" id="seasonLeadTwo">從田埂走進城市，把三十五年的歲月交給捷運工程；也因成為苗栗山城老蜂農的大女婿，年輕時便跟著丈人追花採蜜。半輩子是工程師，假日追蜂尋蜜，在工地與山野之間，走出一段斜槓人生。</p>
         </div>
         <div class="hero-actions">
           <a class="button primary" href="#lifeChapters">閱讀章節</a>
@@ -109,18 +110,24 @@
       </article>
       <article class="chapter-card">
         <span>第七章</span>
+        <h2>花博勤務記憶</h2>
+        <p>台北市申辦世界花卉博覽會期間的勤務支援、現場照片與短片，整理成城市記憶的一段花絮。</p>
+        <a href="stories.html#taipeiFloraExpo">看花博花絮</a>
+      </article>
+      <article class="chapter-card">
+        <span>第八章</span>
         <h2>照片相簿</h2>
         <p>老屋、梯田、品茗桌、捷運工地與蜂箱旁的照片，讓文字有了可以回看的畫面。</p>
         <a href="#homeGallerySection">瀏覽相簿</a>
       </article>
       <article class="chapter-card">
-        <span>第八章</span>
+        <span>第九章</span>
         <h2>歌曲</h2>
         <p>把故鄉、茶香、工程與蜂蜜寫成歌，讓人生故事可以被唱出來。</p>
         <a href="music.html">打開歌曲</a>
       </article>
       <article class="chapter-card">
-        <span>第九章</span>
+        <span>第十章</span>
         <h2>收藏館</h2>
         <p>台灣茶、紫砂壺、和田玉與老物件，未來都能成為生命記憶的數位典藏；和田玉收藏已另外整理成專屬網站。</p>
         <a href="https://jean0966753579-bot.github.io/jianhetian-collection/" target="_blank" rel="noopener">進入和田玉收藏</a>

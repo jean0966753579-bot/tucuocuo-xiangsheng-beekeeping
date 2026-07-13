@@ -1,3 +1,48 @@
+const activeSeason = "spring";
+
+const homeSeasons = {
+  spring: {
+    bodyClass: "spring",
+    image: "assets/photos/web/shared-butterfly-pea-old-house.jpg",
+    alt: "春季土埆厝庭院裡的蝶豆花與午後光影",
+    eyebrow: "春回美人山．土埆厝醒來",
+    title: "春天的老屋，把土地重新喚醒",
+    note: "目前首頁季節：春",
+    leadOne: "蝶豆花在竹篩裡亮起紫色，庭院的盆栽、木桌與土埆牆一起接住午後的光。春天不是突然來的，是老屋一點一點醒來的聲音。",
+    leadTwo: "這個網站整理故鄉老屋、返鄉務農、翔勝養蜂、茶行創業與捷運工程人生。每一篇文字、每一張照片、每一首歌，都是把記憶重新安放回土地。"
+  },
+  summer: {
+    bodyClass: "summer",
+    image: "assets/photos/web/shared-field-water-view.jpg",
+    alt: "夏季雨後田園、水田與遠山景色",
+    eyebrow: "夏日水田．山海天光",
+    title: "水田映著天空，老屋守著盛夏",
+    note: "目前首頁季節：夏",
+    leadOne: "雨後水田把藍天與雲影收進田裡，山風從美人山腳慢慢吹來。盛夏的土埆厝不安靜，它有蟬聲、農忙，也有海風裡的開闊。",
+    leadTwo: "這個季節適合看見土地正在生長：水圳、梯田、竹林、蜂箱與人的汗水，都把日子推向更飽滿的方向。"
+  },
+  autumn: {
+    bodyClass: "autumn",
+    image: "assets/photos/web/shared-pomelo-old-house-courtyard.jpg",
+    alt: "秋季土埆厝庭院木桌上的柚子與收成景色",
+    eyebrow: "秋收庭院．蜂蜜與茶香",
+    title: "收成放上木桌，歲月有了甜味",
+    note: "目前首頁季節：秋",
+    leadOne: "柚子擺在庭院木桌上，紅色木輪車停在老牆旁。秋天的土埆厝有收成的重量，也有蜂蜜、茶香與夕陽慢慢沉下去的顏色。",
+    leadTwo: "走過茶行、工程與蜂場，再回頭看老屋，才知道成熟不是抵達終點，而是把一路上的辛苦整理成可以分享的味道。"
+  },
+  winter: {
+    bodyClass: "winter",
+    image: "assets/photos/web/old-house-restored-evening.jpg",
+    alt: "冬季暮色裡亮起燈的土埆厝",
+    eyebrow: "冬日守望．老屋有燈",
+    title: "暮色落下，老屋替家人等門",
+    note: "目前首頁季節：冬",
+    leadOne: "山色暗下來，木窗裡的燈光亮起。冬天的土埆厝把聲音放輕，留下炊煙、家族、記憶與那些不必大聲說出口的守望。",
+    leadTwo: "一年走到這裡，適合回望。看工程現場、看蜂場花期、看茶香與老物件，也看見一個家如何在山海之間把時間留下。"
+  }
+};
+
 const galleryItems = [
   {
     title: "蝶豆花與土埆厝午後",
@@ -763,6 +808,15 @@ const galleryItems = [
 
 const articleItems = [
   {
+    title: "城市花開時，我在現場",
+    date: "2026-07-14",
+    tag: "台北花博勤務",
+    category: "engineering",
+    summary: "台北市申辦世界花卉博覽會期間的勤務支援、展區花景、人潮動線與短片花絮，先整理成生命誌裡的一段城市記憶。",
+    link: "stories.html#taipeiFloraExpo",
+    keywords: "台北 花博 世界花卉博覽會 勤務 支援 花景 展區 人潮 城市記憶 短片 影片 花絮"
+  },
+  {
     title: "北海鄉情．山海茶路",
     date: "2026-07-05",
     tag: "山海茶路",
@@ -888,6 +942,7 @@ const reflectionItems = [
   { category: "life", text: "茶行的香、工地的灰、捷運隧道的光，後來都成為同一條回家的路。" },
   { category: "life", text: "品質關卡守住了，工程才有資格往下一站前進。" },
   { category: "life", text: "工程人在工地扛的是鋼筋水泥，回到家扛的是一整個家庭。" },
+  { category: "life", text: "城市花開時，站在勤務現場的人，也替那一段時代留下了自己的角度。" },
   { category: "beekeeping", text: "蜂蜜的甜，是花給的，也是人一年一年守出來的。" },
   { category: "music", text: "旋律一開始，有些沒有照片的畫面，也會自己亮起來。" },
   { category: "home", text: "山與海之間，最想留住的不是遠方，而是回家的方向。" },
@@ -1382,6 +1437,33 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const backToTop = document.querySelector(".back-to-top");
 
+function applyHomeSeason() {
+  if (page !== "home") return;
+
+  const season = homeSeasons[activeSeason] || homeSeasons.spring;
+  document.body.dataset.season = season.bodyClass;
+
+  const heroImage = document.querySelector("#seasonHeroImage");
+  const eyebrow = document.querySelector("#seasonEyebrow");
+  const title = document.querySelector("#seasonTitle");
+  const note = document.querySelector("#seasonNote");
+  const leadOne = document.querySelector("#seasonLeadOne");
+  const leadTwo = document.querySelector("#seasonLeadTwo");
+
+  if (heroImage) {
+    heroImage.src = season.image;
+    heroImage.alt = season.alt;
+  }
+
+  if (eyebrow) eyebrow.textContent = season.eyebrow;
+  if (title) title.textContent = season.title;
+  if (note) note.textContent = `${season.note}。之後只要調整 script.js 的 activeSeason，就能切換四季封面與色彩。`;
+  if (leadOne) leadOne.textContent = season.leadOne;
+  if (leadTwo) leadTwo.textContent = season.leadTwo;
+}
+
+applyHomeSeason();
+
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
@@ -1481,9 +1563,17 @@ function setupGalleryLightbox() {
 
   function openLightbox(item) {
     if (!item || !item.src) return;
+    const categoryLabels = {
+      beekeeping: "翔勝養蜂相簿",
+      engineering: "工程與茶行相簿",
+      "flora-expo": "台北花博勤務相簿",
+      home: "山海之間相簿",
+      childhood: "故鄉與土角厝相簿"
+    };
+
     image.src = item.src;
     image.alt = item.title;
-    category.textContent = item.category === "beekeeping" ? "翔勝養蜂相簿" : "故鄉與土角厝相簿";
+    category.textContent = categoryLabels[item.category] || "生命相簿";
     title.textContent = item.title;
     date.textContent = item.date;
     place.textContent = item.place;
@@ -1798,6 +1888,7 @@ renderGallery("homeGallery", "all", 6);
 renderGallery("childhoodGallery", "childhood");
 renderGallery("engineeringGallery", "engineering");
 renderGallery("beekeepingGallery", "beekeeping");
+renderGallery("floraExpoGallery", "flora-expo", 12);
 setupGalleryLightbox();
 renderArticles("latestArticles", "all", 3);
 renderArticles("beekeepingArticles", "beekeeping");
