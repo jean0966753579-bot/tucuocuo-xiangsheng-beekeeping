@@ -3,42 +3,42 @@ const activeSeason = "spring";
 const homeSeasons = {
   spring: {
     bodyClass: "spring",
-    image: "assets/photos/web/shared-butterfly-pea-old-house.jpg",
-    alt: "春季土埆厝庭院裡的蝶豆花與午後光影",
+    image: "assets/photos/web/old-house-spring-wisteria.jpg",
+    alt: "春季紫藤花下的土埆厝與庭院",
     eyebrow: "春回美人山．土埆厝醒來",
     title: "春天的老屋，把土地重新喚醒",
     note: "目前首頁季節：春",
-    leadOne: "蝶豆花在竹篩裡亮起紫色，庭院的盆栽、木桌與土埆牆一起接住午後的光。春天不是突然來的，是老屋一點一點醒來的聲音。",
+    leadOne: "紫藤垂在屋簷前，花串、木柴、石牆與土埆牆一起接住春天的光。春天不是突然來的，是老屋一點一點醒來的聲音。",
     leadTwo: "這個網站整理故鄉老屋、返鄉務農、翔勝養蜂、茶行創業與捷運工程人生。每一篇文字、每一張照片、每一首歌，都是把記憶重新安放回土地。"
   },
   summer: {
     bodyClass: "summer",
-    image: "assets/photos/web/shared-field-water-view.jpg",
-    alt: "夏季雨後田園、水田與遠山景色",
+    image: "assets/photos/web/old-house-summer-window.jpg",
+    alt: "夏季土埆厝木窗前的笑容與花盆",
     eyebrow: "夏日水田．山海天光",
     title: "水田映著天空，老屋守著盛夏",
     note: "目前首頁季節：夏",
-    leadOne: "雨後水田把藍天與雲影收進田裡，山風從美人山腳慢慢吹來。盛夏的土埆厝不安靜，它有蟬聲、農忙，也有海風裡的開闊。",
+    leadOne: "木窗打開，笑容從土埆牆裡探出來，窗前的小花也跟著熱鬧。盛夏的土埆厝不安靜，它有蟬聲、農忙，也有海風裡的開闊。",
     leadTwo: "這個季節適合看見土地正在生長：水圳、梯田、竹林、蜂箱與人的汗水，都把日子推向更飽滿的方向。"
   },
   autumn: {
     bodyClass: "autumn",
-    image: "assets/photos/web/shared-pomelo-old-house-courtyard.jpg",
-    alt: "秋季土埆厝庭院木桌上的柚子與收成景色",
+    image: "assets/photos/web/old-house-autumn-friends.jpg",
+    alt: "秋季朋友們在土埆厝前合影",
     eyebrow: "秋收庭院．蜂蜜與茶香",
     title: "收成放上木桌，歲月有了甜味",
     note: "目前首頁季節：秋",
-    leadOne: "柚子擺在庭院木桌上，紅色木輪車停在老牆旁。秋天的土埆厝有收成的重量，也有蜂蜜、茶香與夕陽慢慢沉下去的顏色。",
+    leadOne: "朋友在老屋前排成一列，笑聲把庭院照亮。秋天的土埆厝有收成的重量，也有蜂蜜、茶香與人情慢慢沉澱下來的顏色。",
     leadTwo: "走過茶行、工程與蜂場，再回頭看老屋，才知道成熟不是抵達終點，而是把一路上的辛苦整理成可以分享的味道。"
   },
   winter: {
     bodyClass: "winter",
-    image: "assets/photos/web/old-house-restored-evening.jpg",
-    alt: "冬季暮色裡亮起燈的土埆厝",
+    image: "assets/photos/web/old-house-winter-friends.jpg",
+    alt: "冬季親友在土埆厝前合影留念",
     eyebrow: "冬日守望．老屋有燈",
     title: "暮色落下，老屋替家人等門",
     note: "目前首頁季節：冬",
-    leadOne: "山色暗下來，木窗裡的燈光亮起。冬天的土埆厝把聲音放輕，留下炊煙、家族、記憶與那些不必大聲說出口的守望。",
+    leadOne: "冬日外套與圍巾站在老屋前，背景是安靜的屋瓦與土牆。土埆厝把聲音放輕，留下炊煙、家族、記憶與那些不必大聲說出口的守望。",
     leadTwo: "一年走到這裡，適合回望。看工程現場、看蜂場花期、看茶香與老物件，也看見一個家如何在山海之間把時間留下。"
   }
 };
@@ -93,6 +93,86 @@ const galleryItems = [
     gps: "待補",
     song: "自己的風景",
     note: "從高處遠望田園、水池與山線，前景的綠瓶讓這張照片多了一點生活片刻的輕鬆感。"
+  },
+  {
+    title: "花博入口的家人合影",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-entrance-family-2011-02-12.jpg",
+    date: "2011-02-12",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "家人在花博入口綠牆與標誌前合影，留下城市盛會與家庭同行的紀念畫面。"
+  },
+  {
+    title: "入口綠牆前的寬景",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-entrance-family-wide-2011-02-12.jpg",
+    date: "2011-02-12",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "寬景保留入口人潮、植栽綠牆與花博字樣，呈現那一天走進展區前的熱鬧氣氛。"
+  },
+  {
+    title: "展館草坡前留影",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-pavilion-lawn-2011-04-26.jpg",
+    date: "2011-04-26",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "站在展館草坡與遊客動線前，照片把花博的綠建築、公共空間與勤務記憶放在同一個畫面裡。"
+  },
+  {
+    title: "花田前的工作身影",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-flower-field-2011-04-26.jpg",
+    date: "2011-04-26",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "花田、展館與遊客構成花博的典型風景，也記錄支援勤務時親身走過的城市場域。"
+  },
+  {
+    title: "與花博吉祥物合照",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-mascot-2011-04-26.jpg",
+    date: "2011-04-26",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "與花博吉祥物合影，替嚴肅的勤務記憶留下一個輕鬆、鮮明又有時代感的註腳。"
+  },
+  {
+    title: "彩色花帶中的笑容",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-colorful-flowerbed-2011-04-26.jpg",
+    date: "2011-04-26",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "黃、桃紅與綠色花帶圍出展區的節慶感，照片裡的笑容讓花博不只是活動，也成為可回看的生命片段。"
+  },
+  {
+    title: "大理花園旁的片刻",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-dahlia-garden-2011-04-26.jpg",
+    date: "2011-04-26",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "坐在花園旁，身後是層層花色與往來遊客，像是忙碌勤務中短暫停下的一格。"
+  },
+  {
+    title: "展區步道與綠屋頂",
+    category: "flora-expo",
+    src: "assets/photos/web/flora-expo/flora-expo-expo-park-walkway-2011-04-26.jpg",
+    date: "2011-04-26",
+    place: "2010 臺北國際花卉博覽會",
+    gps: "台北市",
+    song: "城市花開時，我在現場",
+    note: "步道、草坡、綠屋頂與遊客動線，保留花博展區的空間感，也讓勤務支援的現場更有輪廓。"
   },
   {
     title: "2004 年修復前的荒廢庭院",

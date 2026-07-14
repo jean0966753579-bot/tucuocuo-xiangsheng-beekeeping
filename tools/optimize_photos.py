@@ -81,6 +81,18 @@ FILES = [
     "beekeeping-xiangsheng-truck-loaded-boxes.jpg",
     "beekeeping-xiangsheng-night-truck-boxes.jpg",
     "nanxi-honey-harvest-2018.jpg",
+    "old-house-spring-wisteria.jpg",
+    "old-house-summer-window.jpg",
+    "old-house-autumn-friends.jpg",
+    "old-house-winter-friends.jpg",
+    "flora-expo/flora-expo-entrance-family-2011-02-12.jpg",
+    "flora-expo/flora-expo-entrance-family-wide-2011-02-12.jpg",
+    "flora-expo/flora-expo-pavilion-lawn-2011-04-26.jpg",
+    "flora-expo/flora-expo-flower-field-2011-04-26.jpg",
+    "flora-expo/flora-expo-mascot-2011-04-26.jpg",
+    "flora-expo/flora-expo-colorful-flowerbed-2011-04-26.jpg",
+    "flora-expo/flora-expo-dahlia-garden-2011-04-26.jpg",
+    "flora-expo/flora-expo-expo-park-walkway-2011-04-26.jpg",
 ]
 
 
@@ -90,7 +102,9 @@ def main():
         image = Image.open(SOURCE / name)
         image = ImageOps.exif_transpose(image).convert("RGB")
         image.thumbnail((1800, 1800))
-        image.save(OUTPUT / name, "JPEG", quality=86, optimize=True, progressive=True)
+        target = OUTPUT / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        image.save(target, "JPEG", quality=86, optimize=True, progressive=True)
         print(f"{name}: {image.size[0]}x{image.size[1]}")
 
 
