@@ -1458,6 +1458,171 @@ const sharedMusicTracks = [
 歌詞小段
 花開的時候
 整座山都醒來`
+  },
+  {
+    title: "把善意种进今天",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/把善意种进今天.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `把善意种进今天
+
+歌詞小段
+把善意种进今天
+讓明天多一點光`
+  },
+  {
+    title: "為一朵花停留",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/為一朵花停留.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `為一朵花停留
+
+歌詞小段
+為一朵花停留
+也為忙碌的心留一點時間`
+  },
+  {
+    title: "把日子種成花",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/把日子種成花.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `把日子種成花
+
+歌詞小段
+把日子種成花
+讓平凡也慢慢開出顏色`
+  },
+  {
+    title: "屋簷下的候鳥",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/屋簷下的候鳥.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `屋簷下的候鳥
+
+歌詞小段
+屋簷下的候鳥
+總會記得回家的方向`
+  },
+  {
+    title: "追著花開的約定",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/追著花開的約定.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `追著花開的約定
+
+歌詞小段
+追著花開的約定
+一路走到風也變溫柔`
+  },
+  {
+    title: "牆上的慢時鐘",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/牆上的慢時鐘.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `牆上的慢時鐘
+
+歌詞小段
+牆上的慢時鐘
+替老屋留住慢慢走的光陰`
+  },
+  {
+    title: "幸福就在腳下",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/幸福就在腳下.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `幸福就在腳下
+
+歌詞小段
+幸福就在腳下
+走穩今天，就走近了明天`
+  },
+  {
+    title: "今天的花",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/今天的花.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `今天的花
+
+歌詞小段
+今天的花
+開在今天，就已經值得珍惜`
+  },
+  {
+    title: "九重葛盛開的陽台",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/九重葛盛開的陽台.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `九重葛盛開的陽台
+
+歌詞小段
+九重葛盛開的陽台
+把小小日子照成明亮風景`
+  },
+  {
+    title: "一根冰棒與水煮花生",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/一根冰棒與水煮花生.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `一根冰棒與水煮花生
+
+歌詞小段
+一根冰棒與水煮花生
+都是記憶裡最樸素的甜`
+  },
+  {
+    title: "溫柔留白",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/溫柔留白.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `溫柔留白
+
+歌詞小段
+溫柔留白
+讓說不出口的心事也有地方安放`
+  },
+  {
+    title: "留一點溫柔",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/留一點溫柔.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `留一點溫柔
+
+歌詞小段
+留一點溫柔
+給自己，也給走過的路`
+  },
+  {
+    title: "種下一畝夢",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/種下一畝夢.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `種下一畝夢
+
+歌詞小段
+種下一畝夢
+等春風來時慢慢發芽`
+  },
+  {
+    title: "美人山下的約定",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/美人山下的約定.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `美人山下的約定
+
+歌詞小段
+美人山下的約定
+讓回家的路一直亮著`
+  },
+  {
+    title: "山還在，人還在",
+    artist: "分享好聽的音樂",
+    src: "assets/music/shared/山還在_人還在.mp3",
+    story: "分享音樂專區 MP3。",
+    lyrics: `山還在，人還在
+
+歌詞小段
+山還在，人還在
+有些情分就還在`
   }
 ];
 
