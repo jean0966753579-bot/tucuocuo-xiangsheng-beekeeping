@@ -274,6 +274,50 @@ body[data-season="winter"] .hero-overlay {
   font-weight: 700;
 }
 
+.season-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 18px;
+  padding: 6px;
+  border: 1px solid rgba(255, 249, 236, 0.26);
+  border-radius: var(--radius);
+  background: rgba(34, 23, 16, 0.34);
+  box-shadow: 0 10px 28px rgba(18, 11, 7, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+.season-switcher__button {
+  min-width: 42px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 249, 236, 0.28);
+  border-radius: calc(var(--radius) - 2px);
+  background: rgba(255, 249, 236, 0.08);
+  color: rgba(255, 249, 236, 0.88);
+  font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.season-switcher__button:hover,
+.season-switcher__button:focus-visible {
+  border-color: rgba(255, 249, 236, 0.65);
+  background: rgba(255, 249, 236, 0.18);
+  color: #fff9ec;
+}
+
+.season-switcher__button[aria-pressed="true"] {
+  border-color: rgba(255, 249, 236, 0.8);
+  background: var(--honey);
+  color: #2d1d13;
+  transform: translateY(-1px);
+}
+
 .eyebrow {
   margin: 0 0 8px;
   color: var(--honey);

@@ -1,4 +1,5 @@
 const activeSeason = "spring";
+const seasonStorageKey = "tucuocuo-home-season";
 
 const homeSeasons = {
   spring: {
@@ -1682,10 +1683,27 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const backToTop = document.querySelector(".back-to-top");
 
-function applyHomeSeason() {
+function getInitialSeasonKey() {
+  if (page !== "home") return activeSeason;
+
+  try {
+    const savedSeason = window.localStorage.getItem(seasonStorageKey);
+    if (savedSeason && homeSeasons[savedSeason]) return savedSeason;
+  } catch (error) {
+    return activeSeason;
+  }
+
+  return activeSeason;
+}
+
+let currentSeason = getInitialSeasonKey();
+
+function applyHomeSeason(seasonKey = currentSeason) {
   if (page !== "home") return;
 
-  const season = homeSeasons[activeSeason] || homeSeasons.spring;
+  const nextSeasonKey = homeSeasons[seasonKey] ? seasonKey : activeSeason;
+  const season = homeSeasons[nextSeasonKey] || homeSeasons.spring;
+  currentSeason = nextSeasonKey;
   document.body.dataset.season = season.bodyClass;
 
   const heroImage = document.querySelector("#seasonHeroImage");
@@ -1705,9 +1723,34 @@ function applyHomeSeason() {
   if (note) note.textContent = season.note;
   if (leadOne) leadOne.textContent = season.leadOne;
   if (leadTwo) leadTwo.textContent = season.leadTwo;
+
+  document.querySelectorAll("[data-season-button]").forEach((button) => {
+    const isActive = button.dataset.seasonButton === currentSeason;
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function setupSeasonSwitcher() {
+  if (page !== "home") return;
+
+  document.querySelectorAll("[data-season-button]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const seasonKey = button.dataset.seasonButton;
+      if (!homeSeasons[seasonKey]) return;
+
+      applyHomeSeason(seasonKey);
+
+      try {
+        window.localStorage.setItem(seasonStorageKey, seasonKey);
+      } catch (error) {
+        // localStorage may be unavailable in some privacy modes.
+      }
+    });
+  });
 }
 
 applyHomeSeason();
+setupSeasonSwitcher();
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
