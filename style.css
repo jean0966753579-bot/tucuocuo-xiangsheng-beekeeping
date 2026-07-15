@@ -157,9 +157,9 @@ img {
 }
 
 body[data-season="autumn"] .hero img {
-  height: 112%;
+  height: 124%;
   object-position: center top;
-  transform: translateY(-7%);
+  transform: translateY(-14%);
 }
 
 .hero-overlay {
