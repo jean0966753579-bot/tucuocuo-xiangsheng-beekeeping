@@ -204,7 +204,12 @@ const collections = [
       "assets/collections/172/172-3.jpg",
       "assets/collections/172/172-4.jpg",
       "assets/collections/172/172-5.jpg",
-      "assets/collections/172/172-6.jpg"
+      "assets/collections/172/172-6.jpg",
+      "assets/collections/172/172-7.jpg",
+      "assets/collections/172/172-8.jpg",
+      "assets/collections/172/172-9.jpg",
+      "assets/collections/172/172-10.jpg",
+      "assets/collections/172/172-11.jpg"
     ]
   }
 ];
