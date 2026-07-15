@@ -194,8 +194,8 @@ const collections = [
     material: "核桃",
     size: "未提供",
     weight: "未提供",
-    description: "成對文玩核桃，紋路深邃、稜線清晰，兩枚外形與色澤協調；表面呈溫潤紅褐色，可見盤玩後形成的自然光澤。",
-    price: "未提供",
+    description: "一對文玩核桃，僅供欣賞。",
+    price: "僅供欣賞",
     thumbnail: "assets/collections/172/172-0.jpg",
     photos: [
       "assets/collections/172/172-0.jpg",
