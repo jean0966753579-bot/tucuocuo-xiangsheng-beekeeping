@@ -656,6 +656,76 @@ const galleryItems = [
     note: "隧道裡的燈一路延伸，像工程人生一站接一站往前推進。"
   },
   {
+    title: "隧道軌道與鋼構支撐",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-tunnel-track-curve.jpg",
+    date: "待補",
+    place: "捷運工程隧道內",
+    gps: "待補",
+    song: "地下鐵的光",
+    note: "彎道、軌道與連續鋼構支撐一路往隧道深處延伸，呈現地下工程最直接的空間感與壓迫感。"
+  },
+  {
+    title: "通風豎井裡的安全帽隊伍",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-shaft-safety-team.jpg",
+    date: "待補",
+    place: "捷運工程豎井現場",
+    gps: "待補",
+    song: "工程人生",
+    note: "一群工程人站在昏暗的豎井裡，反光背心與安全帽成為現場最醒目的標誌；這是工地巡查、協調與責任的日常。"
+  },
+  {
+    title: "潛盾機前的工務合影",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-shield-machine-group-1994.jpg",
+    date: "1994-11",
+    place: "捷運潛盾工程現場",
+    gps: "待補",
+    song: "工程人生",
+    note: "工務夥伴在潛盾機前合影，照片上留下 1994 年 11 月的時間記號，也留下台北捷運地下工程推進中的一頁。"
+  },
+  {
+    title: "市縣交界與河面下三十米",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-city-county-boundary-sign.jpg",
+    date: "待補",
+    place: "台北市與台北縣交界地下工程",
+    gps: "待補",
+    song: "地下鐵的光",
+    note: "標示牌寫著市縣交界與河面下 30 公尺，提醒這段工程不是普通隧道，而是在河床與城市邊界下方完成的艱難任務。"
+  },
+  {
+    title: "2007 年隧道施工現場",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-tunnel-portrait-2007.jpg",
+    date: "2007-07-19",
+    place: "捷運隧道施工現場",
+    gps: "待補",
+    song: "安全帽下的三十五年",
+    note: "安全帽、反光背心、施工車輛與隧道照明，記錄 2007 年夏天仍在地下現場奔走的工程身影。"
+  },
+  {
+    title: "機場旁工地巡查合影",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-airport-side-team.jpg",
+    date: "待補",
+    place: "捷運工程工地",
+    gps: "待補",
+    song: "工程人生",
+    note: "工務團隊站在開闊場域旁合影，安全帽與反光背心背後，是巡查、監造與現場協調累積出的默契。"
+  },
+  {
+    title: "高架橋下的工務團隊",
+    category: "engineering",
+    src: "assets/photos/web/metro-worksite/metro-worksite-viaduct-team.jpg",
+    date: "待補",
+    place: "捷運高架工程現場",
+    gps: "待補",
+    song: "工程人生",
+    note: "高架橋、紅色棚架與一整排安全帽，留下工程團隊在現場共同完成任務的畫面。"
+  },
+  {
     title: "茶畫下的奉茶時刻",
     category: "engineering",
     src: "assets/photos/web/tea-service-portrait.jpg",
