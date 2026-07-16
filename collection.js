@@ -171,6 +171,24 @@ const collections = [
     ]
   },
   {
+    id: "114",
+    name: "金玉滿堂",
+    material: "新疆和田玉籽料・青白玉紅沁皮・獨籽雕",
+    size: "未提供",
+    weight: "35 克",
+    description: "青白玉紅沁皮，玉質細膩油潤，紅沁油皮色澤亮麗。獨籽精雕金魚、蓮蓬、錢幣與水流，寓意金玉滿堂，適合作為掛件。",
+    price: "未提供",
+    thumbnail: "assets/collections/114/114-0.jpg",
+    photos: [
+      "assets/collections/114/114-0.jpg",
+      "assets/collections/114/114-1.jpg",
+      "assets/collections/114/114-2.jpg",
+      "assets/collections/114/114-3.jpg",
+      "assets/collections/114/114-4.jpg",
+      "assets/collections/114/114-5.jpg"
+    ]
+  },
+  {
     id: "171",
     name: "觀音（黑紅黃料巧雕）",
     material: "新疆和闐黃沁籽料・多色獨籽雕",
