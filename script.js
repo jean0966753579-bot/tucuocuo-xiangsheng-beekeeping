@@ -736,6 +736,26 @@ const galleryItems = [
     note: "品茗桌前的身影，把台灣茶、紫砂壺與待客的溫度留在同一張照片裡。"
   },
   {
+    title: "年輕歲月，第一次把蜂脾捧在手上",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-young-frame-portrait.jpg",
+    date: "早年留影",
+    place: "山林蜂場",
+    gps: "待補",
+    song: "守望蜂鄉",
+    note: "年輕時跟著老丈人走進山林、學著照看蜂群。手中沉甸甸的蜂脾，是養蜂生活的起點，也是半生假日追蜂尋蜜的珍貴見證。"
+  },
+  {
+    title: "在工地與山野之間，嚐一口剛割下的蜂蜜",
+    category: "beekeeping",
+    src: "assets/photos/web/beekeeping-apiary-honey-tasting.jpg",
+    date: "蜂場留影",
+    place: "翔勝養蜂蜂場",
+    gps: "待補",
+    song: "山腳下的蜜香",
+    note: "假日回到林間蜂場，蜂農抽脾、燻煙，我在一旁嚐著新鮮蜂蜜。工程師與養蜂人的斜槓人生，就在工地與山野之間慢慢展開。"
+  },
+  {
     title: "蜂箱旁的家族承接",
     category: "beekeeping",
     src: "assets/photos/web/beekeeping-frame-family.jpg",
