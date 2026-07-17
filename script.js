@@ -1717,6 +1717,43 @@ const sharedMusicTracks = [
   }
 ];
 
+const newSharedMusicFiles = [
+  "赤腳走過田埂路.mp3",
+  "下班路上抬頭望見天.mp3",
+  "不是為了追趕歲月的腳步.mp3",
+  "若還有夢..走未來.mp3",
+  "直到某個午後.mp3",
+  "城市燈火追逐著黑夜.mp3",
+  "一株幼苗一個夢.mp3",
+  "自己的西瓜自己種.mp3",
+  "雨水來得太晚.mp3",
+  "讓水圳重新流淌.mp3",
+  "被吞沒的梯田.mp3",
+  "一杯白開水.mp3",
+  "別只看見枝頭綠意風中搖.mp3",
+  "總把生活寄到明天.mp3",
+  "天底下不過三件事.mp3",
+  "先吃盡了苦.mp3",
+  "世界越近-風險越快來到.mp3",
+  "目送-菩提葉落下.mp3",
+  "薪水換來的日子.mp3",
+  "低氣壓的日子.mp3",
+  "捷運工程師的華爾滋.mp3",
+  "腳下的泥土.mp3",
+  "簡餐.mp3"
+];
+
+newSharedMusicFiles.forEach((fileName) => {
+  const title = fileName.replace(/\.mp3$/i, "").replace(/\.\./g, "，").replace(/-/g, "，");
+  sharedMusicTracks.push({
+    title,
+    artist: "分享好聽的音樂",
+    src: `assets/music/shared/${fileName}`,
+    story: "分享音樂專區新曲。",
+    lyrics: `${title}\n\n請按下播放，慢慢聽這首歌。`
+  });
+});
+
 const oldHouseTimeline = [
   { year: "1910", title: "簡家土角厝落成", text: "老屋建於一九一〇年，原本是傳統一條龍格局，見證金山美人山下百年農村歲月。" },
   { year: "增建", title: "家族人口增加，左右護龍陸續形成", text: "隨著家族人口增加，老屋陸續增建左右護龍，只可惜左側廂房後來年久崩壞。" },
