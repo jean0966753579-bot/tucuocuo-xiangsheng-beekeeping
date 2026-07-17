@@ -1984,6 +1984,117 @@ function setupGalleryLightbox() {
   });
 }
 
+function setupDigitalAlbums() {
+  const dialog = document.querySelector("#albumDialog");
+  if (!dialog) return;
+  const albums = {
+    country: {
+      label: "相簿一・鄉下", title: "鄉下｜屋前屋後的日常", intro: "果園、菜圃與鵝群，收藏鄉間生活裡安靜而珍貴的片刻。",
+      photos: [
+        ["assets/albums/country/S__299827208.jpg", "果園與遠山"],
+        ["assets/albums/country/S__299827212.jpg", "溫室裡的水耕蔬菜"],
+        ["assets/albums/country/S__299819026.jpg", "菜園裡的相聚"],
+        ["assets/albums/country/S__299819032.jpg", "花草間的鵝群"],
+        ["assets/albums/country/S__324362243.jpg", "草地上散步的鵝群"],
+        ["assets/albums/country/S__299917314.jpg", "鄉間坡地的日常" ]
+      ]
+    },
+    work: {
+      label: "相簿二・工作", title: "工作｜一步一腳印", intro: "從日常辦公、工程紀錄到團隊榮譽，記下認真做事的人，以及歲月累積下來的專業。",
+      photos: [
+        ["assets/albums/work/P1000419.JPG", "辦公室裡的工作日常"],
+        ["assets/albums/work/P1000952.JPG", "忙碌工作中的片刻"],
+        ["assets/albums/work/DSC05006.JPG", "整理與審閱工程文件"],
+        ["assets/albums/work/img002.jpg", "工程局活動合影"],
+        ["assets/albums/work/DSC05913.JPG", "接受績優人員表揚"],
+        ["assets/albums/work/DSC05919.JPG", "績優人員頒獎合影・2005"],
+        ["assets/albums/work/DSC01722.JPG", "捷運工程成果與團隊榮耀・2006"]
+      ]
+    },
+    honey: {
+      label: "相簿三・採蜜", title: "採蜜｜跟著花開出發", intro: "循著花期走進蜂場，從照料蜂群到採收，看見一滴蜂蜜背後完整的旅程。",
+      photos: [
+        ["assets/albums/honey/DSC05300.jpg", "林間蜂場全景"],
+        ["assets/albums/honey/DSC05304.jpg", "檢視蜂群與蜂脾"],
+        ["assets/albums/honey/DSC05321.jpg", "從蜂箱中取出蜂脾"],
+        ["assets/albums/honey/DSC05326.jpg", "兩片飽滿的蜜脾"],
+        ["assets/albums/honey/DSC05361.jpg", "蜂群覆滿蜂脾"],
+        ["assets/albums/honey/DSC05369.jpg", "蜂農展示成熟蜜脾"],
+        ["assets/albums/honey/DSC05371.jpg", "蜂蜜在巢房中閃著光"],
+        ["assets/albums/honey/DSC05380.jpg", "封蓋蜜的細節"],
+        ["assets/albums/honey/DSC05389.jpg", "採收現場與搖蜜設備"],
+        ["assets/albums/honey/DSC05397.jpg", "夥伴一起整理蜂箱"],
+        ["assets/albums/honey/DSC05414.jpg", "林間採蜜作業"],
+        ["assets/albums/honey/DSC05417.jpg", "蜂場裡的採收團隊"],
+        ["assets/albums/honey/DSC05425.jpg", "蜂箱蓋上的自然蜂巢"],
+        ["assets/albums/honey/DSC05430.jpg", "排列如花瓣的天然巢脾"],
+        ["assets/albums/honey/DSC05435.jpg", "蜂群與新築的白色巢脾"],
+        ["assets/albums/honey/DSC05447.jpg", "自然巢脾近景" ]
+      ]
+    }
+  };
+  const label = dialog.querySelector("#albumDialogLabel");
+  const title = dialog.querySelector("#albumDialogTitle");
+  const intro = dialog.querySelector("#albumDialogIntro");
+  const pageView = dialog.querySelector("#albumDialogPage");
+  const pageCount = dialog.querySelector("#albumPageCount");
+  const prevButton = dialog.querySelector("#albumPrev");
+  const nextButton = dialog.querySelector("#albumNext");
+  const closeButton = dialog.querySelector(".album-dialog__close");
+  let opener = null;
+  let currentPage = 0;
+  let currentPhotos = [];
+
+  function showPage(index) {
+    const totalPages = currentPhotos.length;
+    if (!totalPages) {
+      pageView.textContent = "照片準備中";
+      pageCount.textContent = "";
+      return;
+    }
+    currentPage = (index + totalPages) % totalPages;
+    const [src, caption] = currentPhotos[currentPage];
+    pageView.innerHTML = `<img src="${src}" alt="${caption}">`;
+    pageCount.textContent = `${caption}　${currentPage + 1} / ${totalPages}`;
+  }
+
+  function closeAlbum() {
+    dialog.classList.remove("open");
+    dialog.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("no-scroll");
+    opener?.focus();
+  }
+
+  function openAlbum(key, button) {
+    const album = albums[key];
+    if (!album) return;
+    opener = button;
+    label.textContent = album.label;
+    title.textContent = album.title;
+    intro.textContent = album.intro;
+    currentPhotos = album.photos || [];
+    showPage(0);
+    dialog.classList.add("open");
+    dialog.setAttribute("aria-hidden", "false");
+    document.body.classList.add("no-scroll");
+    closeButton.focus();
+  }
+
+  document.querySelectorAll(".album-card[data-album]").forEach((card) => {
+    const button = card.querySelector(".album-cover");
+    button?.addEventListener("click", () => openAlbum(card.dataset.album, button));
+  });
+  prevButton.addEventListener("click", () => showPage(currentPage - 1));
+  nextButton.addEventListener("click", () => showPage(currentPage + 1));
+  dialog.addEventListener("click", (event) => { if (event.target.closest("[data-close-album]")) closeAlbum(); });
+  document.addEventListener("keydown", (event) => {
+    if (!dialog.classList.contains("open")) return;
+    if (event.key === "Escape") closeAlbum();
+    if (event.key === "ArrowLeft") showPage(currentPage - 1);
+    if (event.key === "ArrowRight") showPage(currentPage + 1);
+  });
+}
+
 function renderArticles(targetId, filter = "all", limit = articleItems.length) {
   const target = document.querySelector(`#${targetId}`);
   if (!target) return;
@@ -2268,6 +2379,7 @@ renderGallery("engineeringGallery", "engineering");
 renderGallery("beekeepingGallery", "beekeeping");
 renderGallery("floraExpoGallery", "flora-expo", 12);
 setupGalleryLightbox();
+setupDigitalAlbums();
 renderArticles("latestArticles", "all", 3);
 renderArticles("beekeepingArticles", "beekeeping");
 renderArticles("beeKnowledgeArticles", "knowledge");

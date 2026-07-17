@@ -140,14 +140,63 @@
       </article>
     </section>
 
-    <section class="section split-section" id="homeGallerySection">
+    <section class="section album-shelf" id="homeGallerySection" aria-labelledby="albumShelfTitle">
+      <div class="section-heading album-shelf__heading">
+        <p class="eyebrow">歲月相簿</p>
+        <h2 id="albumShelfTitle">三本相簿，收藏一路走來的風景</h2>
+        <p>先把故事的位置留好，照片會在下一次整理時慢慢放進來。</p>
+      </div>
+      <div class="album-grid">
+        <article class="album-card" data-album="country">
+          <button class="album-cover album-cover--country" type="button" aria-haspopup="dialog">
+            <span class="album-cover__number">相簿一</span><span class="album-cover__mark" aria-hidden="true">田</span>
+            <span class="album-cover__title">鄉下</span><span class="album-cover__note">屋前屋後・田邊日常</span>
+          </button>
+          <p>收藏老厝、田園與鄉間生活裡，那些平凡卻耐看的片刻。</p>
+        </article>
+        <article class="album-card" data-album="work">
+          <button class="album-cover album-cover--work" type="button" aria-haspopup="dialog">
+            <span class="album-cover__number">相簿二</span><span class="album-cover__mark" aria-hidden="true">工</span>
+            <span class="album-cover__title">工作</span><span class="album-cover__note">一步一腳印・做事的人</span>
+          </button>
+          <p>記下工作現場、夥伴身影，以及一路累積起來的專業與歲月。</p>
+        </article>
+        <article class="album-card album-card--featured" data-album="honey">
+          <span class="album-card__ribbon">跟著花開去採蜜</span>
+          <button class="album-cover album-cover--honey" type="button" aria-haspopup="dialog">
+            <span class="album-cover__number">相簿三</span><span class="album-cover__mark" aria-hidden="true">蜜</span>
+            <span class="album-cover__title">採蜜</span><span class="album-cover__note">花季限定・蜂農日記</span>
+            <span class="album-cover__cta">翻開採蜜日記 <span aria-hidden="true">→</span></span>
+          </button>
+          <p>從花開、蜂群到採收，把一滴蜂蜜背後的旅程留給你慢慢看。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-section home-gallery-preview" aria-labelledby="galleryPreviewTitle">
       <div>
         <p class="eyebrow">照片相簿</p>
-        <h2>照片不是附件，是故事打開的那一扇門。</h2>
+        <h2 id="galleryPreviewTitle">照片不是附件，是故事打開的那一扇門。</h2>
         <p>相簿收進土埆厝、金山景色、茶行歲月、捷運工程與翔勝養蜂。每一張照片都像一枚路標，點開之後，日期、地點、歌曲與簡短說明會把人帶回當時的現場。</p>
       </div>
       <div class="gallery-grid" id="homeGallery"></div>
     </section>
+
+    <div class="album-dialog" id="albumDialog" aria-hidden="true">
+      <div class="album-dialog__backdrop" data-close-album></div>
+      <section class="album-dialog__panel" role="dialog" aria-modal="true" aria-labelledby="albumDialogTitle">
+        <button class="album-dialog__close" type="button" aria-label="關閉相簿" data-close-album>×</button>
+        <p class="eyebrow" id="albumDialogLabel">數位相簿</p>
+        <h2 id="albumDialogTitle"></h2><p id="albumDialogIntro"></p>
+        <div class="album-reader" aria-live="polite">
+          <button class="album-reader__nav" id="albumPrev" type="button" aria-label="上一張照片">‹</button>
+          <div class="album-reader__page" id="albumDialogPage"></div>
+          <button class="album-reader__nav" id="albumNext" type="button" aria-label="下一張照片">›</button>
+        </div>
+        <p class="album-reader__count" id="albumPageCount"></p>
+        <p class="album-dialog__notice">以代表性畫面編排，略過內容相近的連拍照片。</p>
+      </section>
+    </div>
 
     <section class="section">
       <div class="section-heading">
