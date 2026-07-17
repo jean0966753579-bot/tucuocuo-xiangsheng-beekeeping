@@ -1996,7 +1996,11 @@ function setupDigitalAlbums() {
         ["assets/albums/country/S__299819026.jpg", "菜園裡的相聚"],
         ["assets/albums/country/S__299819032.jpg", "花草間的鵝群"],
         ["assets/albums/country/S__324362243.jpg", "草地上散步的鵝群"],
-        ["assets/albums/country/S__299917314.jpg", "鄉間坡地的日常" ]
+        ["assets/albums/country/S__299917314.jpg", "鄉間坡地的日常"],
+        ["assets/albums/country/IMG_3299.JPG", "田野間的騎馬身影"],
+        ["assets/albums/country/DSC03063.JPG", "俯望金山田園風景・2012"],
+        ["assets/albums/country/jinshan-watercolor-old-house.jpg", "金山老厝水彩速寫"],
+        ["assets/albums/country/jinshan-watercolor-fields.jpg", "金山田園水彩風景"]
       ]
     },
     work: {
@@ -2008,7 +2012,8 @@ function setupDigitalAlbums() {
         ["assets/albums/work/img002.jpg", "工程局活動合影"],
         ["assets/albums/work/DSC05913.JPG", "接受績優人員表揚"],
         ["assets/albums/work/DSC05919.JPG", "績優人員頒獎合影・2005"],
-        ["assets/albums/work/DSC01722.JPG", "捷運工程成果與團隊榮耀・2006"]
+        ["assets/albums/work/DSC01722.JPG", "捷運工程成果與團隊榮耀・2006"],
+        ["assets/albums/work/P1010872.JPG", "辦公桌前的工作片刻"]
       ]
     },
     honey: {
@@ -2029,7 +2034,14 @@ function setupDigitalAlbums() {
         ["assets/albums/honey/DSC05425.jpg", "蜂箱蓋上的自然蜂巢"],
         ["assets/albums/honey/DSC05430.jpg", "排列如花瓣的天然巢脾"],
         ["assets/albums/honey/DSC05435.jpg", "蜂群與新築的白色巢脾"],
-        ["assets/albums/honey/DSC05447.jpg", "自然巢脾近景" ]
+        ["assets/albums/honey/DSC05447.jpg", "自然巢脾近景"],
+        ["assets/albums/honey/P1000873.JPG", "竹林與果樹間的蜂場"],
+        ["assets/albums/honey/P1000879.JPG", "果樹盛開的蜜源花季"],
+        ["assets/albums/honey/FIL10998.JPG", "蜜蜂在枝葉間採集花蜜・2004"],
+        ["assets/albums/honey/FIL15382.JPG", "蜜蜂停在花苞上的特寫・2004"],
+        ["assets/albums/honey/FIL997.JPG", "白花上的採蜜身影・2004"],
+        ["assets/albums/honey/FIL15399.JPG", "山林蜂場的採收夥伴・2004"],
+        ["assets/albums/honey/FIL15484.JPG", "手持蜜脾的採蜜紀念・2004"]
       ]
     }
   };
