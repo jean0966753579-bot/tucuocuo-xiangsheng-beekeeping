@@ -1156,6 +1156,38 @@ body[data-season="winter"] .hero-overlay {
   aspect-ratio: 16 / 10;
 }
 
+.flora-expo-gallery {
+  padding-top: 0;
+}
+
+.flora-expo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.flora-expo-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 0 12px 28px rgba(77, 46, 28, 0.08);
+}
+
+.flora-expo-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.flora-expo-grid figcaption {
+  padding: 12px 14px 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 @media (max-width: 780px) {
   .rural-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1170,6 +1202,10 @@ body[data-season="winter"] .hero-overlay {
   .rural-gallery-feature {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .flora-expo-grid {
+    grid-template-columns: 1fr;
   }
 }
 
