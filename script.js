@@ -2098,7 +2098,13 @@ function setupDigitalAlbums() {
         ["assets/albums/honey/FIL15382.JPG", "蜜蜂停在花苞上的特寫・2004"],
         ["assets/albums/honey/FIL997.JPG", "白花上的採蜜身影・2004"],
         ["assets/albums/honey/FIL15399.JPG", "山林蜂場的採收夥伴・2004"],
-        ["assets/albums/honey/FIL15484.JPG", "手持蜜脾的採蜜紀念・2004"]
+        ["assets/albums/honey/FIL15484.JPG", "手持蜜脾的採蜜紀念・2004"],
+        ["assets/albums/honey/nanxi-honey-extraction-2018.jpg", "楠溪蜂場搖蜜採收現場・2018"],
+        ["assets/albums/honey/apiary-carrying-boxes-2008.jpg", "林間蜂場搬運蜂箱・2008"],
+        ["assets/albums/honey/apiary-harvest-team-2008.jpg", "蜂群飛舞中的採蜜團隊・2008"],
+        ["assets/albums/honey/apiary-boxes-portrait-2008.jpg", "蜂箱旁的蜂農身影・2008"],
+        ["assets/albums/honey/apiary-orchard-portrait-2008.jpg", "果樹林間的蜂場紀錄・2008"],
+        ["assets/albums/honey/natural-comb-closeup-2008.jpg", "新築白色天然巢脾特寫・2008"]
       ]
     }
   };
