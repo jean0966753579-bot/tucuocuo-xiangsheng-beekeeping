@@ -380,6 +380,13 @@ body[data-season="winter"] .hero-overlay {
   box-shadow: 0 12px 28px rgba(45, 29, 19, 0.22);
 }
 
+.button.xiaojian-home {
+  border-color: rgba(255, 241, 207, 0.8);
+  color: #fff9ec;
+  background: linear-gradient(180deg, rgba(137, 92, 55, 0.96), rgba(91, 57, 36, 0.96));
+  box-shadow: 0 12px 28px rgba(45, 29, 19, 0.22);
+}
+
 .section {
   width: min(1120px, calc(100% - 36px));
   margin: 0 auto;
