@@ -1796,9 +1796,23 @@ const sharedMusicCategoryLabels = [
 
 const sharedMusicCategoryKeywords = {
   relax: ["放鬆", "微風", "溫柔", "留白", "清夢", "白開水", "午後", "花", "月桃", "山風", "茶", "一葉", "一襟", "慢慢", "風景", "春天", "歲月", "日子", "幸福", "甘甜", "風", "海", "雲霧", "草"],
-  sleep: ["清夢", "窗前", "慢時鐘", "目送", "低氣壓", "午後", "溫柔留白", "留一點溫柔", "白開水", "一襟", "直到某個午後", "夜", "黑夜", "凌晨"],
+  sleep: [],
   everyday: ["田", "稻", "花開", "花轎", "下班", "生活", "今天", "腳下", "山", "蜂", "蜜", "茶", "道路", "工程師", "簡餐", "日子", "風景", "花", "菜園", "草", "雞腿", "豆漿", "便利商店", "鐘錶", "大暑"]
 };
+
+const sharedMusicSleepKeywords = ["睡前", "安眠", "入睡", "晚安", "清夢", "慢時鐘", "夜曲", "溫柔入夢", "催眠", "輕眠"];
+const sharedMusicSleepTitles = new Set([
+  "一襟清夢",
+  "溫柔留白",
+  "留一點溫柔",
+  "牆上的慢時鐘",
+  "慢慢放鬆",
+  "放鬆心情搭配輕鬆的旋律",
+  "微風輕輕走過青草岸邊",
+  "直到某個午後",
+  "窗前那位房客",
+  "目送，菩提葉落下"
+]);
 
 function getSharedMusicCategories(track) {
   const title = track.title || "";
@@ -1807,8 +1821,12 @@ function getSharedMusicCategories(track) {
     .filter((category) => sharedMusicCategoryKeywords[category.id].some((keyword) => title.includes(keyword)))
     .map((category) => category.id);
 
+  const isSleepFriendly = sharedMusicSleepTitles.has(title)
+    || sharedMusicSleepKeywords.some((keyword) => title.includes(keyword));
+  if (isSleepFriendly) categories.push("sleep");
+
   if (!categories.length) categories.push("everyday");
-  return categories;
+  return [...new Set(categories)];
 }
 
 sharedMusicTracks.forEach((track) => {
