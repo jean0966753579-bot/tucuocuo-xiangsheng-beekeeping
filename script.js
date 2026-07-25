@@ -1774,6 +1774,34 @@ newSharedMusicFiles.forEach((fileName) => {
   });
 });
 
+const sharedMusicCategoryLabels = [
+  { id: "all", label: "全部歌曲" },
+  { id: "everyday", label: "適合平常時間聽" },
+  { id: "relax", label: "放鬆心情" },
+  { id: "sleep", label: "睡覺之前" }
+];
+
+const sharedMusicCategoryKeywords = {
+  relax: ["放鬆", "微風", "溫柔", "留白", "清夢", "白開水", "午後", "花", "月桃", "山風", "茶", "一葉", "一襟", "慢慢", "風景", "春天", "歲月", "日子", "幸福", "甘甜"],
+  sleep: ["清夢", "窗前", "慢時鐘", "目送", "低氣壓", "午後", "溫柔留白", "留一點溫柔", "白開水", "一襟", "直到某個午後", "夜", "黑夜"],
+  everyday: ["田", "稻", "花開", "花轎", "下班", "生活", "今天", "腳下", "山", "蜂", "蜜", "茶", "道路", "工程師", "簡餐", "日子", "風景", "花"]
+};
+
+function getSharedMusicCategories(track) {
+  const title = track.title || "";
+  const categories = sharedMusicCategoryLabels
+    .filter((category) => category.id !== "all")
+    .filter((category) => sharedMusicCategoryKeywords[category.id].some((keyword) => title.includes(keyword)))
+    .map((category) => category.id);
+
+  if (!categories.length) categories.push("everyday");
+  return categories;
+}
+
+sharedMusicTracks.forEach((track) => {
+  track.categories = getSharedMusicCategories(track);
+});
+
 const oldHouseTimeline = [
   { year: "1910", title: "簡家土角厝落成", text: "老屋建於一九一〇年，原本是傳統一條龍格局，見證金山美人山下百年農村歲月。" },
   { year: "增建", title: "家族人口增加，左右護龍陸續形成", text: "隨著家族人口增加，老屋陸續增建左右護龍，只可惜左側廂房後來年久崩壞。" },
@@ -2244,6 +2272,7 @@ function setupMusic() {
   const repeatToggle = document.querySelector("#repeatToggle");
   const nextTrack = document.querySelector("#nextTrack");
   const autoPlayAll = document.querySelector("#autoPlayAll");
+  const categoryBar = document.querySelector("#musicCategories");
 
   if (!playlist || !audio || !trackTitle || !trackMeta || !lyricsTitle || !lyricsText) return;
 
@@ -2253,14 +2282,21 @@ function setupMusic() {
   let loadCheckId = 0;
   let shouldAutoPlaySelectedTrack = false;
   let shouldAutoPlayAll = false;
+  let activeCategory = "all";
 
   const isGoogleDriveSource = (src = "") => /drive\.google\.com|drive\.usercontent\.google\.com/i.test(src);
   const isLocalAudioSource = (src = "") => Boolean(src) && !/^https?:\/\//i.test(src);
   const getMetaText = (track, extra = "") => [track.artist, track.story, extra].filter(Boolean).join("｜");
   const sourceTracks = page === "shared-music" ? sharedMusicTracks : musicTracks;
-  const playlistTracks = sourceTracks.filter((track) => isLocalAudioSource(track.src));
+  const allPlaylistTracks = sourceTracks.filter((track) => isLocalAudioSource(track.src));
+
+  function getVisibleTracks() {
+    if (activeCategory === "all") return allPlaylistTracks;
+    return allPlaylistTracks.filter((track) => track.categories?.includes(activeCategory));
+  }
 
   function getNextTrack(track) {
+    const playlistTracks = getVisibleTracks();
     if (!playlistTracks.length) return null;
     const currentIndex = playlistTracks.indexOf(track);
     const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % playlistTracks.length : 0;
@@ -2272,6 +2308,7 @@ function setupMusic() {
   }
 
   function findNextLocalTrack(track) {
+    const playlistTracks = getVisibleTracks();
     const startIndex = Math.max(0, playlistTracks.indexOf(track));
 
     for (let offset = 1; offset <= playlistTracks.length; offset += 1) {
@@ -2403,19 +2440,62 @@ function setupMusic() {
     selectTrack(next.track, next.button, true);
   });
 
-  playlist.innerHTML = "";
+  function renderPlaylist() {
+    const playlistTracks = getVisibleTracks();
+    playlist.innerHTML = "";
+    buttonsByTrack.clear();
 
-  playlistTracks.forEach((track, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "track-button";
-    button.innerHTML = `<strong>${track.title}</strong><span>${track.artist}</span>`;
-    button.addEventListener("click", () => selectTrack(track, button, true));
-    playlist.appendChild(button);
-    buttonsByTrack.set(track, button);
-  });
+    playlistTracks.forEach((track) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "track-button";
+      button.innerHTML = `<strong>${track.title}</strong><span>${track.artist}</span>`;
+      button.addEventListener("click", () => selectTrack(track, button, true));
+      playlist.appendChild(button);
+      buttonsByTrack.set(track, button);
+    });
 
-  const firstPlayableTrack = playlistTracks[0];
+    if (!playlistTracks.length) {
+      playlist.innerHTML = "<p class=\"playlist-empty\">這個分類目前還沒有歌曲。</p>";
+      return;
+    }
+
+    if (selectedTrack && playlistTracks.includes(selectedTrack)) {
+      const selectedButtonForCategory = buttonsByTrack.get(selectedTrack);
+      selectedButtonForCategory?.classList.add("active");
+      selectedButton = selectedButtonForCategory;
+      return;
+    }
+
+    selectTrack(playlistTracks[0], buttonsByTrack.get(playlistTracks[0]), false);
+  }
+
+  function renderCategoryButtons() {
+    if (!categoryBar) return;
+    categoryBar.innerHTML = "";
+    sharedMusicCategoryLabels.forEach((category) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "music-category-button";
+      button.textContent = category.label;
+      button.setAttribute("aria-pressed", String(category.id === activeCategory));
+      button.addEventListener("click", () => {
+        activeCategory = category.id;
+        categoryBar.querySelectorAll(".music-category-button").forEach((node) => {
+          node.classList.toggle("active", node === button);
+          node.setAttribute("aria-pressed", String(node === button));
+        });
+        renderPlaylist();
+      });
+      if (category.id === activeCategory) button.classList.add("active");
+      categoryBar.appendChild(button);
+    });
+  }
+
+  renderCategoryButtons();
+  renderPlaylist();
+
+  const firstPlayableTrack = getVisibleTracks()[0];
 
   if (firstPlayableTrack) {
     selectTrack(firstPlayableTrack, buttonsByTrack.get(firstPlayableTrack), false);

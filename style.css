@@ -1065,6 +1065,34 @@ body[data-season="winter"] .hero-overlay {
   color: var(--paper);
 }
 
+.music-category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0 16px;
+  padding: 4px 0 2px;
+}
+
+.music-category-button {
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid rgba(69, 111, 72, 0.32);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--forest);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.music-category-button:hover,
+.music-category-button:focus-visible,
+.music-category-button.active,
+.music-category-button[aria-pressed="true"] {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: var(--paper);
+}
+
 .playlist {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
@@ -1089,6 +1117,16 @@ body[data-season="winter"] .hero-overlay {
   align-content: center;
   gap: 5px;
   box-shadow: 0 8px 18px rgba(77, 46, 28, 0.05);
+}
+
+.playlist-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 22px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  text-align: center;
 }
 
 .track-button strong {
