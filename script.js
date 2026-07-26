@@ -1718,6 +1718,16 @@ const sharedMusicTracks = [
 ];
 
 const newSharedMusicFiles = [
+  "高山峻嶺台灣茶.mp3",
+  "茶園藏在雲霧中.mp3",
+  "市場天未亮.mp3",
+  "午夜的背面.mp3",
+  "黑豆醬油.mp3",
+  "平凡的日子.mp3",
+  "熱浪燒滿山.mp3",
+  "我的絲瓜藤.mp3",
+  "買不回昨天.mp3",
+  "微風吹過山坡邊.mp3",
   "這裡有水圳.mp3",
   "煮個清粥小菜.mp3",
   "金山三和國小.mp3",
@@ -1838,7 +1848,7 @@ const sharedMusicCategoryKeywords = {
   everyday: ["田", "稻", "花開", "花轎", "下班", "生活", "今天", "腳下", "山", "蜂", "蜜", "茶", "道路", "工程師", "簡餐", "日子", "風景", "花", "菜園", "草", "雞腿", "豆漿", "便利商店", "鐘錶", "大暑"]
 };
 
-const sharedMusicSleepKeywords = ["睡前", "安眠", "入睡", "晚安", "清夢", "慢時鐘", "夜曲", "溫柔入夢", "催眠", "輕眠"];
+const sharedMusicSleepKeywords = ["睡前", "安眠", "入睡", "晚安", "清夢", "慢時鐘", "夜曲", "午夜", "溫柔入夢", "催眠", "輕眠"];
 const sharedMusicSleepTitles = new Set([
   "一襟清夢",
   "溫柔留白",
