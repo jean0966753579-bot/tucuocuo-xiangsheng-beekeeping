@@ -1830,7 +1830,7 @@ const newSharedMusicFiles = [
 
 newSharedMusicFiles.forEach((fileName) => {
   const title = fileName.replace(/\.mp3$/i, "").replace(/\.\./g, "，").replace(/-/g, "，");
-  sharedMusicTracks.push({
+  sharedMusicTracks.unshift({
     title,
     artist: "分享好聽的音樂",
     src: `assets/music/shared/${fileName}`,
