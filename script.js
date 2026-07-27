@@ -1,5 +1,4 @@
 const activeSeason = "spring";
-const seasonStorageKey = "tucuocuo-home-season";
 
 const homeSeasons = {
   spring: {
@@ -1943,20 +1942,17 @@ const siteNav = document.querySelector(".site-nav");
 const backToTop = document.querySelector(".back-to-top");
 const recentUpdates = document.querySelector("[data-recent-updates]");
 
-function getInitialSeasonKey() {
+function getCalendarSeasonKey(date = new Date()) {
   if (page !== "home") return activeSeason;
 
-  try {
-    const savedSeason = window.localStorage.getItem(seasonStorageKey);
-    if (savedSeason && homeSeasons[savedSeason]) return savedSeason;
-  } catch (error) {
-    return activeSeason;
-  }
-
-  return activeSeason;
+  const month = date.getMonth() + 1;
+  if (month >= 3 && month <= 5) return "spring";
+  if (month >= 6 && month <= 8) return "summer";
+  if (month >= 9 && month <= 11) return "autumn";
+  return "winter";
 }
 
-let currentSeason = getInitialSeasonKey();
+let currentSeason = getCalendarSeasonKey();
 
 function applyHomeSeason(seasonKey = currentSeason) {
   if (page !== "home") return;
@@ -1999,12 +1995,6 @@ function setupSeasonSwitcher() {
       if (!homeSeasons[seasonKey]) return;
 
       applyHomeSeason(seasonKey);
-
-      try {
-        window.localStorage.setItem(seasonStorageKey, seasonKey);
-      } catch (error) {
-        // localStorage may be unavailable in some privacy modes.
-      }
     });
   });
 }

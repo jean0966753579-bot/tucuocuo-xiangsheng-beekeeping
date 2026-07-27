@@ -342,6 +342,12 @@ body[data-season="winter"] .hero-overlay {
   letter-spacing: 0.08em;
 }
 
+body[data-season="summer"] .life-note,
+body[data-season="autumn"] .life-note,
+body[data-season="winter"] .life-note {
+  display: none;
+}
+
 .life-note i {
   width: 4px;
   height: 4px;
