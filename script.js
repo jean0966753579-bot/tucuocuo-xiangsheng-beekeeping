@@ -1821,7 +1821,12 @@ const newSharedMusicFiles = [
   "低氣壓的日子.mp3",
   "捷運工程師的華爾滋.mp3",
   "腳下的泥土.mp3",
-  "簡餐.mp3"
+  "簡餐.mp3",
+  "野莓紅滿一整片.mp3",
+  "曾經以為自己很重要.mp3",
+  "切開酪梨像開盲盒.mp3",
+  "百香果園清晨寧靜.mp3",
+  "虱目魚閃著銀光.mp3"
 ];
 
 newSharedMusicFiles.forEach((fileName) => {
@@ -1936,6 +1941,7 @@ const yearNode = document.querySelector("#year");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const backToTop = document.querySelector(".back-to-top");
+const recentUpdates = document.querySelector("[data-recent-updates]");
 
 function getInitialSeasonKey() {
   if (page !== "home") return activeSeason;
@@ -2005,6 +2011,33 @@ function setupSeasonSwitcher() {
 
 applyHomeSeason();
 setupSeasonSwitcher();
+
+if (recentUpdates) {
+  const recentUpdatesButton = recentUpdates.querySelector(".recent-updates__button");
+  const recentUpdatesMenu = recentUpdates.querySelector(".recent-updates__menu");
+
+  const closeRecentUpdates = (restoreFocus = false) => {
+    recentUpdatesButton.setAttribute("aria-expanded", "false");
+    recentUpdatesMenu.hidden = true;
+    if (restoreFocus) recentUpdatesButton.focus();
+  };
+
+  recentUpdatesButton.addEventListener("click", () => {
+    const isOpen = recentUpdatesButton.getAttribute("aria-expanded") === "true";
+    recentUpdatesButton.setAttribute("aria-expanded", String(!isOpen));
+    recentUpdatesMenu.hidden = isOpen;
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!recentUpdates.contains(event.target)) closeRecentUpdates();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !recentUpdatesMenu.hidden) {
+      closeRecentUpdates(true);
+    }
+  });
+}
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
