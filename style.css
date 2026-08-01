@@ -428,6 +428,70 @@ body[data-season="winter"] .hero-overlay {
   color: var(--muted);
 }
 
+.video-archive {
+  display: grid;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.video-archive__heading .eyebrow,
+.video-archive__heading h2 {
+  margin: 0;
+}
+
+.video-archive__heading h2 {
+  color: var(--clay-dark);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.video-archive__list {
+  display: grid;
+  gap: 12px;
+}
+
+.video-archive__item {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(220px, auto) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 72px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 250, 240, 0.88);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 9px 24px rgba(77, 46, 28, 0.07);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.video-archive__item:hover,
+.video-archive__item:focus-visible {
+  border-color: rgba(215, 154, 43, 0.72);
+  box-shadow: 0 12px 28px rgba(77, 46, 28, 0.13);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.video-archive__title {
+  color: var(--clay-dark);
+  font-size: 1.12rem;
+  font-weight: 800;
+}
+
+.video-archive__meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.video-archive__action {
+  color: var(--forest);
+  font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .update-anchor {
   scroll-margin-top: 90px;
 }
@@ -1691,6 +1755,11 @@ body[data-season="winter"] .life-note {
 
   .latest-video-card:nth-child(even) .latest-video-card__media {
     order: 0;
+  }
+
+  .video-archive__item {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .album-grid { grid-template-columns: 1fr; }

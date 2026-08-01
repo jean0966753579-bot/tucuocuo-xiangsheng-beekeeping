@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>最新 MP4 欣賞｜山海之間</title>
-  <meta name="description" content="山海之間最新三支音樂影像作品，隨時保持最新、精簡的 MP4 欣賞清單。">
-  <link rel="stylesheet" href="style.css?v=20260801-latest-videos">
+  <meta name="description" content="山海之間最新三支音樂影像作品，以及可持續點閱的歷年影片清單。">
+  <link rel="stylesheet" href="style.css?v=20260801-video-archive">
 </head>
 <body data-page="latest-videos">
   <header class="site-header">
@@ -26,54 +26,68 @@
     <section class="page-hero latest-video-hero">
       <p class="eyebrow">影像新作</p>
       <h1>最新 MP4 欣賞</h1>
-      <p>把新完成的旋律、故事與畫面留在這裡。播放清單維持三支以內，每次更新都換上最新作品。</p>
-      <span class="video-count">目前收錄 3 支影片</span>
+      <p>把新完成的旋律、故事與畫面留在這裡。上方展示最新三支作品，其他影片仍可從下方歌名清單點閱。</p>
+      <span class="video-count">最新展示 3 支｜歷年作品 1 支</span>
     </section>
 
     <section class="section latest-videos" aria-label="最新影片播放清單">
       <article class="latest-video-card">
         <div class="latest-video-card__media">
-          <video controls playsinline preload="metadata" aria-label="播放最新作品 807236638">
-            <source src="assets/videos/latest/latest-01.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="播放絲瓜棚下的微風">
+            <source src="assets/videos/latest/latest-04.mp4" type="video/mp4">
             您的瀏覽器不支援影片播放。
           </video>
         </div>
         <div>
           <p class="latest-video-card__number">最新作品 01</p>
-          <h2>影像新作 807236638</h2>
-          <p class="latest-video-card__details">2026 年 8 月 1 日上架｜片長約 2 分 30 秒</p>
+          <h2>絲瓜棚下的微風</h2>
+          <p class="latest-video-card__details">2026 年 8 月 1 日上架｜片長約 2 分 32 秒</p>
         </div>
       </article>
 
       <article class="latest-video-card">
         <div class="latest-video-card__media">
-          <video controls playsinline preload="metadata" aria-label="播放最新作品 807241155">
-            <source src="assets/videos/latest/latest-02.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="播放味滷的日常">
+            <source src="assets/videos/latest/latest-01.mp4" type="video/mp4">
             您的瀏覽器不支援影片播放。
           </video>
         </div>
         <div>
           <p class="latest-video-card__number">最新作品 02</p>
-          <h2>影像新作 807241155</h2>
-          <p class="latest-video-card__details">2026 年 8 月 1 日上架｜片長約 2 分 57 秒</p>
+          <h2>味滷的日常</h2>
+          <p class="latest-video-card__details">2026 年 8 月 1 日上架｜片長約 2 分 31 秒</p>
         </div>
       </article>
 
       <article class="latest-video-card">
         <div class="latest-video-card__media">
-          <video controls playsinline preload="metadata" aria-label="播放醉蜂鬧山頭">
-            <source src="assets/videos/latest/latest-03.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="播放秋葵與納豆">
+            <source src="assets/videos/latest/latest-02.mp4" type="video/mp4">
             您的瀏覽器不支援影片播放。
           </video>
         </div>
         <div>
           <p class="latest-video-card__number">最新作品 03</p>
-          <h2>醉蜂鬧山頭</h2>
-          <p class="latest-video-card__details">2026 年 7 月 31 日上架｜片長約 2 分 28 秒</p>
+          <h2>秋葵＆納豆</h2>
+          <p class="latest-video-card__details">2026 年 8 月 1 日上架｜片長約 2 分 58 秒</p>
         </div>
       </article>
 
-      <p class="latest-video-note">這一頁固定保留最新三支影片；下一次加入新作品時，會同步移除最舊的一支。</p>
+      <p class="latest-video-note">這一頁固定保留最新三支影片；加入新作品時，會同步將超過三支的影片移至下方各列，保留歌名與點閱功能。</p>
+
+      <section class="video-archive" aria-labelledby="videoArchiveTitle">
+        <div class="video-archive__heading">
+          <p class="eyebrow">歷年作品</p>
+          <h2 id="videoArchiveTitle">點歌名，影片仍可欣賞</h2>
+        </div>
+        <div class="video-archive__list">
+          <a class="video-archive__item" href="assets/videos/latest/latest-03.mp4" target="_blank" rel="noopener">
+            <span class="video-archive__title">醉蜂鬧山頭</span>
+            <span class="video-archive__meta">2026 年 7 月 31 日｜片長約 2 分 29 秒</span>
+            <span class="video-archive__action">點閱影片 <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -82,6 +96,6 @@
   </footer>
 
   <button class="back-to-top" type="button" aria-label="返回頂端">↑</button>
-  <script src="script.js?v=20260801-latest-videos"></script>
+  <script src="script.js?v=20260801-video-archive"></script>
 </body>
 </html>
