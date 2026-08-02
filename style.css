@@ -129,6 +129,24 @@ img {
   color: #6b3f13;
 }
 
+.site-nav .collection-site-link {
+  margin-left: 8px;
+  border: 1px solid rgba(199, 146, 92, 0.42);
+  background: linear-gradient(135deg, #fff4d8, #f5dfad);
+  color: #714315;
+  font-weight: 700;
+  box-shadow: 0 5px 16px rgba(143, 93, 63, 0.1);
+  white-space: nowrap;
+}
+
+.site-nav .collection-site-link:hover,
+.site-nav .collection-site-link:focus-visible {
+  border-color: var(--honey);
+  background: linear-gradient(135deg, #ffedbd, #efce83);
+  color: #5a3510;
+  transform: translateY(-1px);
+}
+
 .nav-toggle {
   display: none;
   width: 42px;
@@ -1710,7 +1728,7 @@ body[data-season="winter"] .life-note {
   cursor: pointer;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1120px) {
   .nav-toggle {
     display: inline-grid;
     place-items: center;
@@ -1736,6 +1754,14 @@ body[data-season="winter"] .life-note {
   .site-nav a {
     width: 100%;
   }
+
+  .site-nav .collection-site-link {
+    margin: 6px 0 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 880px) {
 
   .intro-grid,
   .opening-story__grid,
