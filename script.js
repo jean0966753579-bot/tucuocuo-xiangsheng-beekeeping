@@ -1937,6 +1937,7 @@ const flowerCalendar = [
 
 const page = document.body.dataset.page;
 const yearNode = document.querySelector("#year");
+const contactEmailLinks = document.querySelectorAll("[data-contact-email]");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const backToTop = document.querySelector(".back-to-top");
@@ -2031,6 +2032,16 @@ if (recentUpdates) {
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
+}
+
+if (contactEmailLinks.length) {
+  const contactEmail = [106, 101, 97, 110, 48, 57, 55, 50, 52, 50, 48, 49, 54, 54, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109]
+    .map((characterCode) => String.fromCharCode(characterCode))
+    .join("");
+
+  contactEmailLinks.forEach((link) => {
+    link.href = `mailto:${contactEmail}`;
+  });
 }
 
 if (navToggle && siteNav) {
