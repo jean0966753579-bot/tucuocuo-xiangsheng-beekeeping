@@ -10,6 +10,16 @@ PLANTS = (
     ("purple-joyweed", 0),
     ("angelonia", 2),
     ("cape-mallow", 1),
+    ("french-marigold", 0),
+    ("dahlberg-daisy", 0),
+    ("brazilian-glory-bush", 0),
+    ("creeping-torenia", 1),
+    ("wishbone-flower", 2),
+    ("golden-trumpet-vine", 0),
+    ("flamingo-flower", 0),
+    ("coral-vine", 1),
+    ("asparagus-fern", 1),
+    ("blackberry-lily", 0),
 )
 
 

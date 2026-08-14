@@ -1705,6 +1705,28 @@ body[data-season="winter"] .life-note {
   font-weight: 800;
 }
 
+.legacy-blog-article {
+  max-width: 880px;
+}
+
+.legacy-blog-article .article-intro {
+  font-size: clamp(1.08rem, 2vw, 1.22rem);
+  color: var(--clay-dark);
+}
+
+.legacy-blog-article h3 {
+  margin-top: 34px;
+  color: var(--forest);
+}
+
+.legacy-blog-article .article-note {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(47, 96, 66, 0.08);
+  color: var(--forest);
+  font-size: 0.92rem;
+}
+
 .memory-notes,
 .upload-guide,
 .guide-panel,
