@@ -978,6 +978,50 @@ const galleryItems = [
 
 const articleItems = [
   {
+    title: "植物誌新增射干等十筆植物",
+    date: "2026-08-15",
+    tag: "拈花惹草",
+    category: "flora",
+    summary: "植物專區新增孔雀草、金毛菊、巴西野牡丹、倒地蜈蚣、夏堇、軟枝黃蟬、火鶴花、珊瑚藤、武竹與射干十筆圖文紀錄。",
+    link: "flora.html#blackberry-lily",
+    keywords: "植物誌 天使花 玲瓏扶桑 孔雀草 金毛菊 巴西野牡丹 倒地蜈蚣 夏堇 軟枝黃蟬 火鶴花 珊瑚藤 武竹 射干",
+    recentLabel: "植物誌新增射干等十筆植物",
+    recentOrder: 1
+  },
+  {
+    title: "一分錢一分貨：蜂農、蜂蜜商與自產自銷",
+    date: "2026-08-15",
+    tag: "翔勝養蜂",
+    category: "beekeeping",
+    summary: "整理多年以前的部落格舊文，從蜂農的採收與銷售困境，談純蜜價格、包裝行銷、來源確認與對食品安全的思考。",
+    link: "beekeeping.html#honeyValue",
+    keywords: "蜂蜜 蜂農 自產自銷 純蜜 合成蜜 食品安全 一分錢一分貨",
+    recentLabel: "翔勝養蜂新增蜂蜜舊文",
+    recentOrder: 2
+  },
+  {
+    title: "超冷但超有用的冷知識",
+    date: "2026-08-15",
+    tag: "生活小百科",
+    category: "home",
+    summary: "新增工蜂性別、紅茶與綠茶製程等冷知識，舊內容則收進可展開的歷史記錄。",
+    link: "index.html#coldFacts",
+    keywords: "冷知識 工蜂 女王蜂 紅茶 綠茶 發酵",
+    recentLabel: "冷知識新增工蜂與茶葉分類",
+    recentOrder: 3
+  },
+  {
+    title: "歌曲專區新增七首作品",
+    date: "2026-08-15",
+    tag: "歌曲",
+    category: "music",
+    summary: "歌曲專區新增白海豚颱風吹過土埆厝、孤獨的雄蜂、秋老虎來杯仙草茶等七首作品。",
+    link: "shared-music.html#playlist",
+    keywords: "歌曲 MP3 白海豚 孤獨的雄蜂 仙草茶 番石榴 絲瓜 筍 檸檬樹",
+    recentLabel: "新增七首歌曲",
+    recentOrder: 4
+  },
+  {
     title: "城市花開時，我在現場",
     date: "2026-07-14",
     tag: "台北花博勤務",
@@ -2009,6 +2053,29 @@ function setupSeasonSwitcher() {
 
 applyHomeSeason();
 setupSeasonSwitcher();
+
+function renderRecentUpdates(limit = 4) {
+  const menu = document.querySelector("[data-recent-updates-menu]");
+  if (!menu) return;
+
+  const items = articleItems
+    .filter((item) => item.recentLabel)
+    .sort((first, second) => {
+      const dateOrder = second.date.localeCompare(first.date);
+      return dateOrder || (first.recentOrder ?? 0) - (second.recentOrder ?? 0);
+    })
+    .slice(0, limit);
+
+  menu.replaceChildren(...items.map((item, index) => {
+    const link = document.createElement("a");
+    link.href = item.link;
+    link.textContent = item.recentLabel;
+    if (index === 0) link.classList.add("recent-updates__featured");
+    return link;
+  }));
+}
+
+renderRecentUpdates();
 
 if (recentUpdates) {
   const recentUpdatesButton = recentUpdates.querySelector(".recent-updates__button");

@@ -230,6 +230,8 @@ body[data-season="winter"] .hero-overlay {
 }
 
 .hero-update-row {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2289,6 +2291,14 @@ body[data-season="winter"] .life-note {
 
   .hero-content {
     width: min(100% - 28px, 900px);
+  }
+
+  .recent-updates {
+    position: static;
+  }
+
+  .recent-updates__menu {
+    left: 0;
   }
 
   .gallery-grid {
