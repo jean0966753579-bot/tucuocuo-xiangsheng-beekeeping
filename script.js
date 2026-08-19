@@ -82,7 +82,7 @@ const galleryItems = [
     place: "美人山下",
     gps: "待補",
     song: "美人山下",
-    note: "青山、藍天與山腳下的人家連成一幅安靜的風景，適合放在分享照片區作為自然與家園的開場。"
+    note: "青山、藍天與山腳下的人家連成一幅安靜的風景，適合放在照片收藏區作為自然與家園的開場。"
   },
   {
     title: "田園遠望與綠瓶小景",
@@ -1452,9 +1452,9 @@ musicTracks.forEach((track) => {
 const sharedMusicTracks = [
   {
     title: "種進心裡的春天",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/種進心裡的春天.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `種進心裡的春天
 
 歌詞小段
@@ -1463,9 +1463,9 @@ const sharedMusicTracks = [
   },
   {
     title: "把日子過成風景",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/把日子過成風景.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `把日子過成風景
 
 歌詞小段
@@ -1474,9 +1474,9 @@ const sharedMusicTracks = [
   },
   {
     title: "讓花歸花，讓草歸草",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/讓花歸花_讓草歸草.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `讓花歸花，讓草歸草
 
 歌詞小段
@@ -1485,9 +1485,9 @@ const sharedMusicTracks = [
   },
   {
     title: "這一站，沒白來",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/這一站，沒白來.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `這一站，沒白來
 
 歌詞小段
@@ -1496,9 +1496,9 @@ const sharedMusicTracks = [
   },
   {
     title: "把歲月種成了花",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/把歲月種成了花.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `把歲月種成了花
 
 歌詞小段
@@ -1507,9 +1507,9 @@ const sharedMusicTracks = [
   },
   {
     title: "窗前那位房客",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/窗前那位房客.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `窗前那位房客
 
 歌詞小段
@@ -1518,9 +1518,9 @@ const sharedMusicTracks = [
   },
   {
     title: "一葉一心",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/一葉一心.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `一葉一心
 
 歌詞小段
@@ -1529,9 +1529,9 @@ const sharedMusicTracks = [
   },
   {
     title: "一襟清夢",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/一襟清夢.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `一襟清夢
 
 歌詞小段
@@ -1540,9 +1540,9 @@ const sharedMusicTracks = [
   },
   {
     title: "人生親像蜜香紅茶",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/人生親像蜜香紅茶.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `人生親像蜜香紅茶
 
 歌詞小段
@@ -1551,9 +1551,9 @@ const sharedMusicTracks = [
   },
   {
     title: "山風捎來的甘甜",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/山風捎來的甘甜.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `山風捎來的甘甜
 
 歌詞小段
@@ -1562,9 +1562,9 @@ const sharedMusicTracks = [
   },
   {
     title: "美人山下的月桃花 (1)",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/美人山下的月桃花 (1).mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `美人山下的月桃花
 
 歌詞小段
@@ -1573,9 +1573,9 @@ const sharedMusicTracks = [
   },
   {
     title: "播田花開時",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/播田花開時.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `播田花開時
 
 歌詞小段
@@ -1584,9 +1584,9 @@ const sharedMusicTracks = [
   },
   {
     title: "醉蜂鬧山頭",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/醉蜂鬧山頭.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `醉蜂鬧山頭
 
 歌詞小段
@@ -1595,9 +1595,9 @@ const sharedMusicTracks = [
   },
   {
     title: "把善意种进今天",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/把善意种进今天.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `把善意种进今天
 
 歌詞小段
@@ -1606,9 +1606,9 @@ const sharedMusicTracks = [
   },
   {
     title: "為一朵花停留",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/為一朵花停留.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `為一朵花停留
 
 歌詞小段
@@ -1617,9 +1617,9 @@ const sharedMusicTracks = [
   },
   {
     title: "把日子種成花",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/把日子種成花.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `把日子種成花
 
 歌詞小段
@@ -1628,9 +1628,9 @@ const sharedMusicTracks = [
   },
   {
     title: "屋簷下的候鳥",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/屋簷下的候鳥.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `屋簷下的候鳥
 
 歌詞小段
@@ -1639,9 +1639,9 @@ const sharedMusicTracks = [
   },
   {
     title: "追著花開的約定",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/追著花開的約定.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `追著花開的約定
 
 歌詞小段
@@ -1650,9 +1650,9 @@ const sharedMusicTracks = [
   },
   {
     title: "牆上的慢時鐘",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/牆上的慢時鐘.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `牆上的慢時鐘
 
 歌詞小段
@@ -1661,9 +1661,9 @@ const sharedMusicTracks = [
   },
   {
     title: "幸福就在腳下",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/幸福就在腳下.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `幸福就在腳下
 
 歌詞小段
@@ -1672,9 +1672,9 @@ const sharedMusicTracks = [
   },
   {
     title: "今天的花",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/今天的花.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `今天的花
 
 歌詞小段
@@ -1683,9 +1683,9 @@ const sharedMusicTracks = [
   },
   {
     title: "九重葛盛開的陽台",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/九重葛盛開的陽台.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `九重葛盛開的陽台
 
 歌詞小段
@@ -1694,9 +1694,9 @@ const sharedMusicTracks = [
   },
   {
     title: "一根冰棒與水煮花生",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/一根冰棒與水煮花生.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `一根冰棒與水煮花生
 
 歌詞小段
@@ -1705,9 +1705,9 @@ const sharedMusicTracks = [
   },
   {
     title: "溫柔留白",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/溫柔留白.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `溫柔留白
 
 歌詞小段
@@ -1716,9 +1716,9 @@ const sharedMusicTracks = [
   },
   {
     title: "留一點溫柔",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/留一點溫柔.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `留一點溫柔
 
 歌詞小段
@@ -1727,9 +1727,9 @@ const sharedMusicTracks = [
   },
   {
     title: "種下一畝夢",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/種下一畝夢.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `種下一畝夢
 
 歌詞小段
@@ -1738,9 +1738,9 @@ const sharedMusicTracks = [
   },
   {
     title: "美人山下的約定",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/美人山下的約定.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `美人山下的約定
 
 歌詞小段
@@ -1749,9 +1749,9 @@ const sharedMusicTracks = [
   },
   {
     title: "山還在，人還在",
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: "assets/music/shared/山還在_人還在.mp3",
-    story: "分享音樂專區 MP3。",
+    story: "音樂收藏專區 MP3。",
     lyrics: `山還在，人還在
 
 歌詞小段
@@ -1883,9 +1883,9 @@ newSharedMusicFiles.forEach((fileName) => {
   const title = fileName.replace(/\.mp3$/i, "").replace(/\.\./g, "，").replace(/-/g, "，");
   sharedMusicTracks.unshift({
     title,
-    artist: "分享好聽的音樂",
+    artist: "音樂收藏",
     src: `assets/music/shared/${fileName}`,
-    story: "分享音樂專區新曲。",
+    story: "音樂收藏專區新曲。",
     lyrics: `${title}\n\n請按下播放，慢慢聽這首歌。`
   });
 });
