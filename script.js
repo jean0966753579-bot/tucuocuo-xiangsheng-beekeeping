@@ -978,6 +978,28 @@ const galleryItems = [
 
 const articleItems = [
   {
+    title: "分享音樂新增三十首 MP3",
+    date: "2026-08-20",
+    tag: "分享音樂",
+    category: "music",
+    summary: "音樂收藏專區新增金色浪花、絲瓜爬樹頂、煙火亮起的那一晚、相信自然就對了等三十首 MP3。",
+    link: "shared-music.html#playlist",
+    keywords: "分享音樂 MP3 金色浪花 絲瓜爬樹頂 煙火亮起的那一晚 相信自然就對了",
+    recentLabel: "分享音樂新增三十首 MP3",
+    recentOrder: 0
+  },
+  {
+    title: "三座小學之間，我第一次認識智力測驗",
+    date: "2026-08-16",
+    tag: "童年求學",
+    category: "childhood",
+    summary: "從街上一個年級十個班，到偏鄉小學一班都湊不滿；記下未曾補習的成長環境，以及國中第一次面對智力測驗時的深刻回憶。",
+    link: "childhood.html#schoolMemory",
+    keywords: "童年 求學 偏鄉 小學 幼稚園 補習班 國中 智力測驗 城鄉差距",
+    recentLabel: "新增童年求學小花絮",
+    recentOrder: 1
+  },
+  {
     title: "植物誌新增射干等十筆植物",
     date: "2026-08-15",
     tag: "拈花惹草",
@@ -1890,6 +1912,50 @@ newSharedMusicFiles.forEach((fileName) => {
   });
 });
 
+const driveSharedMusicFiles = [
+  "金色浪花.mp3",
+  "絲瓜爬樹頂.mp3",
+  "煙火亮起的那一晚.mp3",
+  "相信自然就對了.mp3",
+  "自己煮仙草香.mp3",
+  "苦甜鹹香.mp3",
+  "別跟老梗拔河.mp3",
+  "老的就是老的.mp3",
+  "一壺青草香.mp3",
+  "莧菜別硬撐.mp3",
+  "蒼燕鷗之海誓.mp3",
+  "西瓜綿滋味.mp3",
+  "稻草煙牛蜂.mp3",
+  "最香的別丟掉.mp3",
+  "土埆厝前.mp3",
+  "花生發芽了.mp3",
+  "龍鬚菜炒豆瓣醬.mp3",
+  "秋風一來 (1).mp3",
+  "盤玉修心.mp3",
+  "一場秋雨一場涼.mp3",
+  "風小了我還在.mp3",
+  "浪尖之後.mp3",
+  "太陽真大.mp3",
+  "美人山下醉蜂.mp3",
+  "玉米田剪一剪.mp3",
+  "無聲的散場.mp3",
+  "自動牽手.mp3",
+  "秋風一來.mp3",
+  "金山挖地瓜.mp3",
+  "走走走 去看花.mp3"
+];
+
+sharedMusicTracks.unshift(...driveSharedMusicFiles.map((fileName) => {
+  const title = fileName.replace(/\.mp3$/i, "");
+  return {
+    title,
+    artist: "分享好聽的音樂",
+    src: `assets/music/shared/${fileName}`,
+    story: "從雲端音樂收藏加入分享專區的新曲。",
+    lyrics: `${title}\n\n請按下播放，慢慢聽這首歌。`
+  };
+}));
+
 const sharedMusicCategoryLabels = [
   { id: "all", label: "全部歌曲" },
   { id: "everyday", label: "適合平常時間聽" },
@@ -2109,7 +2175,7 @@ if (yearNode) {
 }
 
 if (contactEmailLinks.length) {
-  const contactEmail = [106, 101, 97, 110, 48, 57, 55, 50, 52, 50, 48, 49, 54, 54, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109]
+  const contactEmail = [106, 101, 97, 110, 48, 57, 54, 54, 55, 53, 51, 53, 55, 57, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109]
     .map((characterCode) => String.fromCharCode(characterCode))
     .join("");
 
