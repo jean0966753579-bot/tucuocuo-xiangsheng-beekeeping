@@ -1,9 +1,11 @@
 from pathlib import Path
+import sys
 
 from PIL import Image, ImageOps
 
 
 BASE = Path("assets/flora")
+SELECTED = set(sys.argv[1:])
 PLANTS = (
     ("red-hot-cattail", 2),
     ("purple-billygoat-weed", 0),
@@ -20,10 +22,25 @@ PLANTS = (
     ("coral-vine", 1),
     ("asparagus-fern", 1),
     ("blackberry-lily", 0),
+    ("welsh-onion", 0),
+    ("beggarticks", 1),
+    ("longan", 7),
+    ("marguerite-daisy", 2),
+    ("pentas", 1),
+    ("american-black-nightshade", 2),
+    ("radish", 0),
+    ("celery-leaved-buttercup", 0),
+    ("oriental-hawksbeard", 0),
+    ("haircap-moss", 3),
+    ("bengal-clockvine", 4),
+    ("waterweed", 0),
 )
 
 
 for name, thumb_index in PLANTS:
+    if SELECTED and name not in SELECTED:
+        continue
+
     folder = BASE / name
     originals = sorted(folder.glob("*-original.jpg"))
     for index, source in enumerate(originals, 1):
